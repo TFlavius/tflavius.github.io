@@ -33,8 +33,15 @@ lang: en
 
 ---
 
-> Disclaimer: Almost everything described below is legally questionable. I am not going to discuss this paradox; I think you understand why. But it explains why there is so little public information about the internal structure of Opera Presto (although I am aware of a few deep dives made in closed communities).<br />
-Another explanation is the sheer volume of work required on an undocumented codebase. Browser engines are genuine rocket science, and the Presto code is something special. Figuring out layers of code in three different languages is almost beyond the power of a single human. AI agents, on the other hand, do this task perfectly; I used Fable/Opus and am very happy with the results.<br />
+## Nulla. Disclaimer
+
+This foreword appeared here only after several articles had turned into a series. I went back to the beginning and left the future reader an explanation of what to expect.
+
+1. What follows is an account, at varying depths of technical detail, of how the Opera Presto browser and its Carakan JS engine are built. It started out as pure research; then the author felt like "reviving" the old program... and, as usual, the appetite came with the eating.
+2. Much of what is written here is, legally speaking, let's say, ambiguous. The author lays no claim whatsoever to anyone else's property, and tries not to violate any licenses. Fully aware of the paradox of this undertaking, the author does not intend to discuss it any further, and instead surrenders entirely to the research.
+3. **AI was used** in writing this text, and the author **is not going to hide it**. The author is no fan of AI slop either, so let it be said up front: AI was used in writing these texts only where it was genuinely necessary. Browser engines are real rocket science, and the Presto code is no exception. Working through years-deep layers of code in full detail is beyond any one person (which explains why so few, and such superficial, code write-ups have appeared over the years), and AI agents are the only tool that solves the problem.
+4. 99% of the code was written by AI, 99% of the decisions were made by a human. The author has grounds to consider themselves a decent developer, but admits that the SOTA models from Anthropic and OpenAI did it faster and better.
+
 And now, to the matter at hand...
 
 ## I. The Pre-Monopoly Era: What Opera Was and Why It's Gone
@@ -265,7 +272,7 @@ If you stack all these layers together, a portrait of the team emerges from the 
 
 ## III. A History of a Lie
 
-After Opera ASA decided to switch to WebKit, a lie was born, rivaling the infamous "640K ought to be enough for anybody." Users—whose core demographic was people with an IT background—were told (and I quote): "all these changes will happen under the hood for regular users."
+After Opera ASA decided to switch to WebKit, a lie was born, rivaling the infamous "640K ought to be enough for anybody." Users—whose core demographic was people with an IT background—were told (and I quote): ["all these changes will happen under the hood for regular users"](https://habr.com/ru/companies/opera/articles/169239/).
 
 People took this to mean "instead of Presto there will be WebKit, instead of Carakan there will be V8, but all the features I chose this browser for will remain." And there were a lot of such features, some of which have still never been implemented anywhere else.
 
