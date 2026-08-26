@@ -101,7 +101,7 @@ But one day, on one of these discs, you stumble upon something new and interesti
   <img src="{{ '/img/opera40.png' | relative_url }}" alt="1.8 mb of pure awesomeness" />
 </p>
 
-Opera was a paid product; some versions had a limited trial period, others displayed an unremovable banner. If you, like me, lived in Russia in the 90s/00s, you had neither the money nor the means to buy software—and the need to find a "crack" bothered absolutely no one.<br />
+Opera used to be a paid product; some versions had a limited trial period, others displayed an unremovable banner. If you, like me, lived in Russia in the 90s/00s, you had neither the money nor the means to buy software—and the need to find a "crack" bothered absolutely no one.<br />
 Perhaps that is one reason Opera took such deep root across the former Soviet Union. I imagine that in a different environment I would have weighed the choice between a free but clunky product and a paid alternative. In a situation where all your software was pirated by default, the dilemma didn't exist.
 
 One way or another, in CIS countries, Opera was a massive hit. In its best years, the desktop version held a 50% market share in some of them. Global statistics, however, were an order of magnitude worse—peaking at no more than 5%. Note that I'm talking specifically about desktop versions; the mobile market was a different story, where Opera Mobile and Opera Mini together held a quarter of a constantly growing pie.
