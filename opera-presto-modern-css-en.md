@@ -20,7 +20,7 @@ lang: en
 
 This week turned out to be the most agonizing one. Remember I said that a run of all the tests takes half an hour? Hold on to that number for a moment.
 
-If you're reading this, you almost certainly understand, at least in general terms, what CSS is. Cascading style sheets were once conceived as a convenient way to describe the presentation of pages, and they went through a long evolution. In some ways this story resembles the way JS developed: every browser could interpret the rules its own way and introduce new ones. Those could stick if web developers used them, or they could disappear. The chaos was finally suppressed by standardization and the total dominance of Chromium.
+If you're reading this, you almost certainly understand, at least in general terms, what CSS is. Cascading style sheets were once conceived as a practical way to describe the presentation of pages, and they went through a long evolution. In some ways this story resembles the way JS developed: every browser could interpret the rules its own way and introduce new ones. Those could stick if web developers used them, or they could disappear. The chaos was finally put down by standardization and Chromium's total dominance.
 
 I can't resist a reminder: the very concept of CSS was proposed in 1994 by Håkon Wium Lie. The same man who was CTO of Opera Software from 1998 to 2016. Technically you can't say "this was invented at Opera too," but they certainly knew how to implement the technology.
 
@@ -31,22 +31,22 @@ Even though we taught the engine to run WPT, in practice only a small part of th
 
 In case you're curious: as of now **107,151** tests have become available to run, and about **25,000** more remain out of reach. Out of all that abundance, only **~7,000** pass.
 
-The good news: Presto fully supports the CSS 2.1 specification (well, we never doubted it). What's more, it partially supports properties beyond the spec through experimental vendor prefixes. Back then this was normal practice; all browsers routinely added support for properties that standards hadn't locked down yet. All that remained was to rename the prefixed properties to their standard names. It wasn't without deviations: `-o-border-image` did not match at all the way `border-image` was eventually standardized, so it had to be written from scratch.
+The good news: Presto fully supports the CSS 2.1 specification (well, we never doubted it). What's more, it partially supports properties beyond the spec through experimental vendor prefixes. Back then this was normal practice; all browsers routinely added support for properties that standards hadn't locked down yet. All that remained was to rename the prefixed properties to their standard names. It wasn't without deviations: `-o-border-image` bore no resemblance to the way `border-image` was eventually standardized, so it had to be written from scratch.
 
-The bad news: a single full test run now takes **more than five hours**, and that run is becoming close to mandatory. Skip it and you can miss a regression, which at this stage is extremely likely.<br />
+The bad news: a single full test run now takes **more than five hours**, and that run is becoming all but mandatory. Skip it and you can miss a regression, which at this stage is extremely likely.<br />
 So I had to deal with CI: parallelize some things, optimize the workflow in others. For example, instead of merging finished feature branches straight into `dev`, they are collected into intermediate "umbrella" branches. For each feature only its local area of tests is run, and the full set is launched only when an "umbrella" is merged into the main branch. This saves time, but if a regression surfaces at the "umbrella" merge, it will be harder to fix.<br />
-I realize this is probably the least interesting thing out of everything I'm telling you here, but I considered it important, because this is exactly the part of the work that took the most time.
+I realize this is probably the least interesting thing I'm telling you here, but I thought it worth including, because it's exactly the part of the work that took the most time.
 
 ## XX. The Domino Effect
 
-Back to CSS. The CSS 2.1 specification is *roughly* **40%** of modern standards if you count by the number of properties, and *less than* **3%** if you measure by the volume of the specifications themselves. The spread is surprising, but you have to keep in mind that the early specs were about layout, positioning, and the basic concepts of selectors. Modern ones include dozens of other things (typography, graphics, animations, interaction with the rendering engine), and they are worked out in far more detail. That's an objective reality we'll have to deal with.
+Back to CSS. The CSS 2.1 specification is *roughly* **40%** of modern standards if you count by the number of properties, and *less than* **3%** if you measure by the volume of the specifications themselves. The spread is surprising, but you have to keep in mind that the early specs were about layout, positioning, and the basic concepts of selectors. Modern ones include dozens of other things (typography, graphics, animations, interaction with the rendering engine), and they are worked out in far more detail. That's simply the reality we have to work with.
 
 And unfortunately, in its early stages this work barely parallelizes at all. To add something in one module, you first have to extend something in another, which drags in work in two more, and so on.
 
 One example: the CSS function **[calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc)**.<br />
 This is an entity Presto has no concept of. Implementing it requires adding a completely new kind of parser for mathematical expressions, the math itself, CSS variables, new unit types for sizes, percentage calculations derived from the viewport, and a whole pile of other things.<br />
-But there's nowhere to run: we start with the parser. The original C code of the parser is generated by `bison` and then post-processed by a `bash` script (replacing exceptions with `LEAVE`/`TRAP` and so on). Except the `bison 2.5` that was used won't do anymore — it is hopelessly obsolete, while the current version no longer works with the old grammar parameters. And once it's brought up to date, the post-processing script has to change too, because the structure of the new parser differs from what the script expects.<br />
-The math includes not only basic arithmetic, but also the `min()`, `max()`, `clamp()`, `round()`, `mod()`, `rem()`, `abs()`, `sign()` functions + trigonometry. Plus edge cases, plus optimizers.<br />
+But there's no way around it: we start with the parser. The original C code of the parser is generated by `bison` and then post-processed by a `bash` script (replacing exceptions with `LEAVE`/`TRAP` and so on). Except that the `bison 2.5` they used won't do anymore: it's hopelessly obsolete, and the current version no longer accepts the old grammar parameters. And once it's brought up to date, the post-processing script has to change too, because the structure of the new parser differs from what the script expects.<br />
+The math includes not only basic arithmetic, but also the `min()`, `max()`, `clamp()`, `round()`, `mod()`, `rem()`, `abs()`, `sign()` functions, and trigonometry on top. Plus edge cases, plus optimizers.<br />
 We had already implemented CSS variables a while ago, but a problem surfaced here as well: what if a function needs a variable that hasn't been computed yet? You have to write a deferred substitution mechanism.<br />
 The new `vw/vh/vmin/vmax` units mean getting into `VisualDevice`; the mechanism itself exists in the engine, but it has to be studied and understood.
 
@@ -56,7 +56,7 @@ And so on, and so forth. Almost every change spawns a cascade of new requirement
 
 Damn, when I wrote that JS is hard, I had no idea how much harder CSS would turn out to be!
 
-The whole expanse of work that has opened up... well, it's not that it stuns me into paralysis, I've seen all sorts of things over the decades. But it shifts my perspective: instead of one oddball's project, this ought to be a community project — which is difficult, given the legal status of the sources.
+The sheer expanse of work that has opened up... it's not that it paralyzes me; I've seen all sorts of things over the decades. But it does change my perspective: instead of one oddball's project, this ought to be a community project—which is difficult, given the legal status of the sources.
 
 <nav aria-label="Bottom navigation">
   <a href="#top">↑ Back to top</a> · <a href="{{ '/es2015-gstreamer/' | relative_url }}" rel="next">Next: The Engine That Outpaced Chrome →</a> · WEEK: <a href="{{ '/' | relative_url }}" title="The Engine We Lost">I</a>—<a href="{{ '/revival/' | relative_url }}" title="The Engine We're Bringing Back to Life">II</a>—<a href="{{ '/modern/' | relative_url }}" title="The Engine That Learns">III</a>—<strong>IV</strong>—<a href="{{ '/es2015-gstreamer/' | relative_url }}" title="The Engine That Outpaced Chrome">V</a>—<a href="{{ '/dragonfly-shadow-dom/' | relative_url }}" title="Opera Dragonfly and Shadow DOM">VI</a> · <strong>English</strong> · <a href="{{ '/ru/css/' | relative_url }}" lang="ru">Русский</a>

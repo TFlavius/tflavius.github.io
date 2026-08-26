@@ -25,25 +25,25 @@ lang: en
 - **[XI. More Gems (and More Madness)](#xi-more-gems-and-more-madness)**
 - **[XII. The Beautiful Opera of the Future](#xii-the-beautiful-opera-of-the-future)**
 
-I read through the old chats and forum threads from the time of the source code leak. Many glorious people back then marveled at the code quality and tried to tweak it, but rarely got further than just getting the build to run. Any serious modification required a team of highly qualified specialists willing to dedicate their free time to the project.<br />
+I read through the old chats and forum threads from the time of the source code leak. Plenty of fine people marveled at the code quality back then and tried to improve it, but rarely got further than getting a build to run. Any serious modification required a team of highly qualified specialists willing to dedicate their free time to the project.<br />
 Now, an AI agent does in an hour what a team would have done in a month. What seemed impossible in 2017 has become a matter of a hundred-dollar subscription in 2026.
 
 <p style="text-align: center;">
   <img src="{{ '/img/meme.jpg' | relative_url }}" alt="An exhaustive explanation of the workflow" />
 </p>
 
-Yes, it's literally like in the meme: Claude Opus/Fable and GPT Sol work together. One model writes the implementation, the other strictly reviews it—and I just sit there with a smart look on my face watching them. All the work is documented in a private repository. The list of tasks grows terrifyingly fast as we dive deeper into the code, but after working with banking legacy, I fear nothing.
+Yes, it's literally like in the meme: Claude Opus/Fable and GPT Sol work together. One model writes the implementation, the other reviews it strictly—and I stand around looking wise and watch them. All the work is documented in a private repository. The list of tasks grows terrifyingly fast as we dive deeper into the code, but after working with banking legacy, I fear nothing.
 
 This is the report on the second week of working on the engine.<br />
-I won't bore you with minor issues. They might be notable in their own right, but you'd hardly be interested in a story about how the resource build system was rewritten from Perl to Python for the glory of Occam, and everything worked perfectly until I deployed the repo on a second computer. I spent a day figuring it out, and then rolled back the patch anyway. I'll spare you that kind of routine, but keep in mind that it exists, and there's a whole lot of it.
+I won't bore you with the small stuff. Some of it is notable in its own right, but you'd hardly want the story of how the resource build system was rewritten from Perl to Python for the glory of Occam, and how everything worked perfectly until I deployed the repo on a second machine. I spent a day working it out and then rolled the patch back anyway. I'll spare you that sort of routine, but keep in mind that it exists, and that there's a great deal of it.
 
 ## VII. This Is the Way
 
 To understand where to go, I first needed to understand where we currently are.
 
-For old times' sake, I opened [html5test.com](https://html5test.com). In this benchmark, frozen 10 years ago, Opera 12.15 scored 308 out of 555 points (the current Firefox and Edge at the time of writing scored 509 and 523, respectively). Technically, these aren't really tests: the page just queries the browser for support flags, while the implementation itself isn't verified. However, it's the first milestone you can check simply by opening a website in the browser.
+For old times' sake, I opened [html5test.com](https://html5test.com). In this benchmark, frozen 10 years ago, Opera 12.15 scored 308 out of 555 points (the current Firefox and Edge at the time of writing scored 509 and 523, respectively). Technically these aren't really tests: the page queries the browser for support flags and never verifies the implementation itself. But it's the first reference point you can get just by opening a site in the browser.
 
-The second is the [test262](https://github.com/tc39/test262) test suite, which checks ECMA-262 support by JavaScript engines. To run it, I had to resurrect `jsshell`—a console build of Carakan capable of running JS without a browser. The result was 99.97% on the canonical ES5.1 set (relevant for 2012), and after a few targeted tweaks—100% (**11,572 out of 11,572**).<br />
+The second is the [test262](https://github.com/tc39/test262) test suite, which checks ECMA-262 support by JavaScript engines. To run it, I had to resurrect `jsshell`—a console build of Carakan capable of running JS without a browser. The result was 99.97% on the canonical ES5.1 set (the one that was current in 2012), and after a few targeted fixes—100% (**11,572 out of 11,572**).<br />
 The modern test262 suite currently contains **92,886** tests in total, of which the engine passes **30,282**. Sadly, this doesn't mean that modern JS works even a third of the time—it doesn't work at all.
 
 And the third, largest benchmark: **WPT.**<br />
@@ -51,7 +51,7 @@ And the third, largest benchmark: **WPT.**<br />
 
 How do you force Presto to render a page and output a PNG? The engine has no headless mode, no CLI screenshotter, nothing of the sort. But it does have **Scope**—a remote debugging protocol, the very one Opera Dragonfly ran on: native protobuf over a custom STP transport. It was designed so you could debug a page open on a phone while sitting at your desktop.
 
-Now the CI runs over it. The test runner spins up Opera, connects to its debug port, requests it to render the required window, and grabs the buffer contents. A tool that died along with the product has returned in a new role—as a test infrastructure driver. Digging through old code is absolutely worth it for moments like this.
+Now the CI runs over it. The test runner spins up Opera, connects to its debug port, requests it to render the required window, and grabs the buffer contents. A tool that died along with the product has returned in a new role—as a test infrastructure driver. Moments like this are why digging through old code is worth it.
 
 In the CSS Flexbox screenshot reftests, Opera scores 583 out of 997 on Linux, and 581 on Windows x64. The difference between platforms comes down to fonts and subpixel antialiasing.
 
@@ -59,12 +59,12 @@ The good news: for 2012, this was a browser that was in some ways even ahead of 
 
 ## VIII. The Ratchet
 
-Now, tens of thousands of external checks have been added to the engine's internal tests. And this creates two problems.<br />
+Tens of thousands of external checks now sit alongside the engine's internal tests, and that creates two problems.<br />
 **First**: every full run takes half an hour or more, and that's just for one configuration.<br />
-**Second**: the "all tests green" acceptance criteria is useless because we now have "red" tests. There's a temptation to just say screw it and disable acceptance testing with a "well, that's normal, we'll fix it later and turn it back on."<br />
+**Second**: the "all tests green" acceptance criterion is useless, because now there are "red" tests. There's a temptation to just say screw it and disable acceptance testing with a "well, that's normal, we'll fix it later and turn it back on."<br />
 The first problem just has to be accepted as a given, running the full test scope only where it's explicitly required.<br />
 For the second, there is a pattern designed to combat it. It's called ["the ratchet"](https://qntm.org/ratchet), and its premise is to lock in the number of failures, ensuring that they decrease but never increase. As soon as there are fewer "red" tests, this new baseline must be explicitly locked in. A ratchet only turns one way; you can only loosen it intentionally.<br />
-In practice, you need to track not just the number of failing tests, but *which* tests are failing, and also link the test states to commits. The pattern requires general accuracy and attention to detail. It doesn't check if the baseline is correct—only that it hasn't dropped.
+In practice, you need to track not just the number of failing tests, but *which* tests are failing, and also link the test states to commits. The pattern demands care and attention to detail across the board. It doesn't check whether the baseline is correct, only that it hasn't slipped.
 
 ## IX. New Tricks
 
@@ -102,7 +102,7 @@ I focused my efforts on changes that *seemed* simple, though I assumed I'd misju
 
 But in Presto, a document is born **only from a URL**. The `DocumentManager` loads a URL, the cache serves the bytes, the parser eats them. A "here's a string, parse it" scheme simply does not exist—a consequence of the network-first architecture where everything is a download.
 
-Maybe try creating a URL that serves the required bytes? That turned out to be a dead end: the internal `opera:` scheme has its own content generator, and it **regenerates** the cache contents on every access. Any attempt to manually shove bytes into the cache shatters against `URL_DataStorage::CreateCache()`, which clears the "generated by Opera" flag when the cache is created. Essentially, the engine stubbornly resists letting a URL be anything other than the result of a download.
+Maybe try creating a URL that serves the required bytes? That turned out to be a dead end: the internal `opera:` scheme has its own content generator, and it **regenerates** the cache contents on every access. Any attempt to manually shove bytes into the cache shatters against `URL_DataStorage::CreateCache()`, which clears the "generated by Opera" flag when the cache is created. The engine stubbornly refuses to let a URL be anything other than the result of a download.
 
 The real mechanism was found elsewhere. `FramesDocument` has a field:
 
@@ -126,9 +126,9 @@ The second half of the task is security. A `srcdoc` document must inherit its pa
 
 That last point blocks any attempt at a naive implementation. Right in the middle of its execution, the native function would have to re-enter the interpreter and execute arbitrary JS, which could theoretically do anything, including destroying the very object the method was called on. A single-threaded engine with a manual cleanup stack does not survive such things.
 
-And then it turned out that Carakan has a protocol for this. The native function returns `ES_NEEDS_CONVERSION`, the engine unwinds the call, converts the arguments **itself**—and **restarts** the function with the ready values. The function is written as if the conversion has already happened, though it must distinguish the initial entry from the restart.
+And then it turned out Carakan has a protocol for exactly this. The native function returns `ES_NEEDS_CONVERSION`, the engine unwinds the call, converts the arguments **itself**—and **restarts** the function with the ready values. The function is written as if the conversion has already happened, though it must distinguish the initial entry from the restart.
 
-Moreover, the argument specifier has a form for dictionaries:
+The argument specifier even has a form for dictionaries:
 
 ```cpp
 ES_CONVERT_ARGUMENTS_AS(return_value,
@@ -141,7 +141,7 @@ Distinguishing between "not provided" and "provided as undefined" is the semanti
 
 ### IX.III Two Bits
 
-A very small story, but it perfectly illustrates the paradigms within this code.
+A tiny story, but it captures the paradigms of this code perfectly.
 
 In SVG 1.1, `writing-mode` had its own keywords: `lr-tb`, `rl-tb`, `tb-rl`. In modern CSS, they are `horizontal-tb`, `vertical-rl`, `vertical-lr`. Presto understood both, but mapped them to an internal enum, and the computed style later printed out the legacy spelling. Formally, this isn't a bug, but in practice, any modern code reading `getComputedStyle(el).writingMode` got a word from a 2003 specification, and the result depended on the namespace: on HTML, the same property printed normally.
 
@@ -158,7 +158,7 @@ But what they could only guess at were Undefined Behavior (UB) issues:
 - the WebGL shader builder **returned addresses of local variables**—meaning the GLSL translator operated on memory that no longer existed;
 - HTTP pre-authorization **deleted a pointer inside someone else's buffer**—calling `delete` on a pointer it didn't own;
 - encoded-words parsing in the mail client read a string by casting a pointer to another type, violating strict aliasing;
-- the latter type-puns were also found in the TLS layer and plugin bindings.
+- the same type punning turned up in the TLS layer and the plugin bindings.
 
 These were always broken—the optimizers of that era just didn't catch the places where UB turned into a difference in behavior, but GCC 14 catches them now.
 
@@ -177,7 +177,7 @@ if (ShowIFrameInSSR("g%m!a%i##l.|g'oo@g!l!e$.#%c%o+m", urlname) || // allow ifra
     ShowIFrameInSSR("m%u!##r!s.<>163@.c%o!m", urlname)) // murs.163.com
 ```
 
-The function copies the string and strips out garbage characters `^'<>@ ?|!${[*#%()=+]}`, then looks for the substring in the URL name. That is, the domain whitelist is deliberately stored in a mangled state so that running `strings opera.exe` wouldn't reveal that the browser had specific exceptions for Gmail and Hotmail.
+The function copies the string and strips out garbage characters `^'<>@ ?|!${[*#%()=+]}`, then looks for the substring in the URL name. In other words, the domain whitelist is deliberately stored mangled, so that running `strings opera.exe` wouldn't reveal that the browser had special exceptions for Gmail and Hotmail.
 
 In the adjacent function are sites whose `media=handheld` styles were deemed garbage:
 
@@ -201,11 +201,11 @@ A similar approach is found in the support for Bytemobile's proprietary operator
 static const unsigned char dfkhfdsi[ BM_secretSize] =
 ```
 
-Shared secrets are XORed against a constant, variable names are intentionally turned into `dfkhfdsi` and `lkdngied`, and the comment asks the future maintainer not to "optimize" this area—meaning, don't clean up the intentionally created mess.
+Shared secrets are XORed against a constant, variable names are intentionally turned into `dfkhfdsi` and `lkdngied`, and the comment asks the future maintainer not to "optimize" this area—that is, not to tidy up a mess that was made on purpose.
 
 ---
 
-**The trampoline that isn't there.** In the previous article, I mentioned how the Windows x64 build crashed on every page: the trampoline for jumping from bytecode to native code didn't respect the Win64 calling convention, but the compiler didn't catch it. Now I know why—here's how this trampoline exists in the source code (`modules/ecmascript/carakan/src/compiler/es_native_ia32.cpp`):
+**The trampoline that isn't there.** In the previous article, I mentioned how the Windows x64 build crashed on every page: the trampoline for jumping from bytecode to native code didn't respect the Win64 calling convention, but the compiler didn't catch it. Now I know why. Here is how that trampoline exists in the source (`modules/ecmascript/carakan/src/compiler/es_native_ia32.cpp`):
 
 ```cpp
 /* These machine code arrays can be regenerated by defining the
@@ -226,13 +226,13 @@ const unsigned char cv_BytecodeToNativeTrampoline_sse2[] =
 };
 ```
 
-This isn't an inline assembly block—it's a byte array of machine code with disassembler comments. You couldn't just write `__asm`: MSVC on x86-64 doesn't support inline assembly. So, the trampoline was generated once by their own code generator, dumped out, passed through a Python script that neatly aligned the comments, and pasted into the source file as "code." From then on, it lived as a snapshot: a separate array for every architecture and ABI, maintained by hand. In such a setup, an incorrect version for one of the platforms could lie dormant for years because no compiler ever checks it.
+This isn't an inline assembly block—it's a byte array of machine code with disassembler comments. You couldn't just write `__asm`: MSVC on x86-64 doesn't support inline assembly. So the trampoline was generated once by their own code generator, dumped, passed through a Python script that lined the comments up neatly, and pasted into the source file as "code." From then on it lived as a snapshot: a separate array for every architecture and ABI, maintained by hand. In a setup like that, a wrong version for one platform can lie dormant for years, because no compiler ever checks it.
 
 Frankly, I have no idea how I would solve this problem today.
 
 ---
 
-**Tragedy!** The `<blink>` tag in Presto isn't a CSS animation or a document timer. It's a global subsystem: the `WindowManager` counts how many open documents contain blinking elements and maintains one shared one-second timer, turning it on only when there's actually something to blink. And if it fails to create this timer due to a lack of memory, an absolute tragedy occurs (`modules/dochand/winman.cpp:1057`):
+**Tragedy!** The `<blink>` tag in Presto isn't a CSS animation or a document timer. It's a global subsystem: the `WindowManager` counts how many open documents contain blinking elements and maintains one shared one-second timer, turning it on only when there's actually something to blink. And if it can't create that timer for lack of memory, tragedy strikes (`modules/dochand/winman.cpp:1057`):
 
 ```cpp
 OP_ASSERT(FALSE);
@@ -258,7 +258,7 @@ Order of module shutdown upon exit (`modules/url/url_module.cpp:198`):
 g_opera->libssl_module.InterModuleShutdown();
 ```
 
-The engineer inserted the call not where they thought was right, but left a note in the code specifying exactly *who* made that decision.
+The engineer put the call somewhere other than where they thought it belonged, and left a note in the code naming exactly *who* decided it should go there.
 
 A discussion about the security model in `modules/security_manager/documentation/pending-models.txt` is basically an email chain copied into the documentation folder as-is:
 
@@ -285,7 +285,7 @@ One guy asks in Swedish, the other answers in Norwegian, and they understand eac
 
 > Search engine provides database and full-text functionality for various indexing/searching tasks in Opera, such as visited pages search or cache management. The footprint is roughly 100KB.
 
-A hundred kilobytes—that is, by the way, block storage with journaling, B-trees, a custom compressed prefix index **ACT**, a word segmenter with distinct handling for CJK, Thai, Lao, and Tibetan, its own string compressor, and table cursors. A full-fledged DBMS with full-text search—all for the sake of the `opera:historysearch` page, which searches through the text of **every page you've ever opened**. Locally, without the cloud, in 2006.
+A hundred kilobytes which, incidentally, buy block storage with journaling, B-trees, a custom compressed prefix index **ACT**, a word segmenter with distinct handling for CJK, Thai, Lao, and Tibetan, its own string compressor, and table cursors. A full-fledged DBMS with full-text search—all for the sake of the `opera:historysearch` page, which searches through the text of **every page you've ever opened**. Locally, without the cloud, in 2006.
 
 And in `modules/search_engine/documentation/presentation/`, there's a slideshow about this module—with an outline, pictures, and **speaker notes**. From there:
 
@@ -308,11 +308,11 @@ In the illustration folder for the inverted index slide lies a file named `bush.
 ## XII. The Beautiful Opera of the Future
 
 What's next?<br />
-The main barrier is **ES2015**. When a page includes a script, and the very first line contains an arrow function, `class`, or `let`—the parser crashes with a syntax error, and the entire script just isn't executed at all. Not "works poorly," but doesn't work. This can't be fixed with polyfills; I'll have to touch Carakan itself—its parser, bytecode, and most likely, the JIT.
+The main barrier is **ES2015**. When a page includes a script, and the very first line contains an arrow function, `class`, or `let`—the parser dies with a syntax error and the entire script goes unexecuted. Not "works poorly"—doesn't work. This can't be fixed with polyfills; I'll have to touch Carakan itself—its parser, bytecode, and most likely, the JIT.
 
 Next on the list: CSS Grid, custom properties, Shadow DOM, HTTP/2... A multi-process framework that exists in Presto but was never finished.
 
-A ton of legacy code is biding its time: Hunspell has now been joined by gstreamer (a story akin to the OpenSSL upgrade, but on a larger scale), the shader compiler, and a bunch of other stuff.
+A mountain of legacy code is waiting its turn: Hunspell has now been joined by gstreamer (a story akin to the OpenSSL upgrade, but on a larger scale), the shader compiler, and a bunch of other stuff.
 
 This truly is a massive project, and no matter how well it was originally designed, it requires exceptional coordination. Even with the help of AI agents, working on restoring Opera could go on forever—and I, naturally, cannot guarantee that the work will continue.
 

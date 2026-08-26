@@ -23,7 +23,7 @@ lang: en
 
 This week I'm going to tell you about two subsystems that are finally ready. One of them is old, bump-started back to life; I mean the magnificent Opera Dragonfly debugger. The second one is a brand-new implementation of the **Shadow DOM** API.
 
-These are far from the only improvements and fixes Presto received over the past week. CSS is being refined, new Web APIs are being written, and an absolutely gigantic track of ECMAScript work has been started. Finally, the language file build system has been rewritten from Perl to Python, and 7zip has been thrown out—archiving is available both in Python and in modern operating systems directly. The tooling has now been simplified as far as it will go.
+These are far from the only improvements and fixes Presto received over the past week. CSS is being refined, new Web APIs are being written, and a truly gigantic track of ECMAScript work has been started. Finally, the language file build system has been rewritten from Perl to Python, and 7zip has been thrown out—archiving is available both in Python and in modern operating systems directly. The tooling has now been simplified as far as it will go.
 
 ## XXVI. The Age Before F12: Alert-Driven Development
 
@@ -33,7 +33,7 @@ But the web of the early 2000s was written with no instruments at all. We flew t
 
 If you didn't live through those days, you'll find it hard to believe how excruciating building and debugging even simple pages was. We had exactly one inspection tool built into the browser—the **View Source** command.
 
-The problem with View Source was that it showed the static text that had come from the server. If your JavaScript modified the DOM, added nodes, or changed classes—you **did not see it**. You looked at the original HTML and tried to model in your head what it was supposed to look like after your scripts had been over it. We were like prehistoric programmers compiling a program in their heads before punching the cards.
+The problem with View Source was that it showed the static text that had come from the server. If your JavaScript modified the DOM, added nodes, or changed classes—you **did not see it**. You looked at the original HTML and tried to model in your head what it was supposed to look like after your scripts had had their way with it. We were like prehistoric programmers compiling a program in their heads before punching the cards.
 
 How did we debug layout? By the **red border** method.
 If floats came apart and table layout refused to center, the developer would open a text editor, find the suspicious block, and write:
@@ -56,13 +56,13 @@ The name of the man who changed web development forever is Joe Hewitt. He is the
 
 Firebug wasn't the first debugger in history, but it was the first to implement the paradigm we take for granted today. It gave us a **live DOM tree**, where nodes could be expanded with a click and the changes made by scripts showed up in real time. It gave us a style inspector where CSS properties could be switched on and off with checkboxes. It gave us `console.log()` and a humane console instead of endless alerts. It showed us the waterfall of network requests.
 
-Firebug was so incredibly, mind-blowingly convenient that web developers moved to Firefox en masse just for it. The fox's share was growing rapidly, and other browser vendors realized: developer tools are an enormous competitive advantage. Tools have to be built right into the browser (this is how the WebKit Web Inspector would later appear, evolving into today's Chrome DevTools).
+Firebug was so overwhelmingly, mind-blowingly good that web developers moved to Firefox en masse just for it. The fox's share was growing rapidly, and other browser vendors realized: developer tools are an enormous competitive advantage. Tools have to be built right into the browser (this is how the WebKit Web Inspector would later appear, evolving into today's Chrome DevTools).
 
-Opera Software, with its principle of "we do everything ourselves and we do it conceptually," couldn't stay out of it. They needed their own answer to Firebug. An answer that was powerful, fast, cross-platform and, preferably, capable of debugging pages not only on the desktop but on mobile devices, where Opera ruled the roost at the time.
+Opera Software, with its principle of "we do everything ourselves and we do it with a vision," couldn't stay out of it. They needed their own answer to Firebug. An answer that was powerful, fast, cross-platform, and preferably capable of debugging pages not only on the desktop but on mobile devices, where Opera ruled the roost at the time.
 
 Their answer was called **Opera Dragonfly**.
 
-From an engineering standpoint it was a masterpiece. Opera's architects decided not to sew the debugger's UI into the browser core, but to make it... an ordinary web application. The engine exposed access to its own guts over an internal protocol (`scope`), while the Dragonfly interface itself was loaded from the network and talked to the engine exactly the way it would talk to a remote server. This elegantly solved two problems at once: the debugger's interface could be updated independently of the browser's own releases, and remote debugging of a phone from a desktop worked literally out of the box—you only had to forward a port.
+From an engineering standpoint it was a masterpiece. Opera's architects decided not to bake the debugger's UI into the browser core, but to make it... an ordinary web application. The engine exposed access to its own guts over an internal protocol (`scope`), while the Dragonfly interface itself was loaded from the network and talked to the engine exactly the way it would talk to a remote server. This elegantly solved two problems at once: the debugger's interface could be updated independently of the browser's own releases, and remote debugging of a phone from a desktop worked literally out of the box—you only had to forward a port.
 
 Dragonfly and its development tools are [open source under Apache-2.0](https://github.com/operasoftware/dragonfly), so it can be studied, modified, and used without restrictions. Let's do exactly that.
 
@@ -77,9 +77,9 @@ The first thing I managed to check was whether the original version worked as is
 The way it is built is the quintessence of Opera's approach. Everything homegrown, everything independent, and—damn it—designed so well that it still impresses to this day. Take the way the debugger interacted with the browser: we already know it used its own `scope` protocol, based on `protobuf`. Yet Dragonfly was so advanced that it could run even in Chrome and Firefox, which knew nothing about `scope`. In those cases Dragonfly implemented the required API itself through a proxy, and in more than one way. It could be either a WebSocket at `/stp-1-channel` or long polling with `GET /get-message` plus `POST /post-command/<service>/<command>/<tag>`.
 
 It follows that a client like this cannot and should not use the browser's UI. That is why Dragonfly contains its own UI framework (built around a concept very close to what would later show up in the Custom Elements specification), its own layout manager, its own markup templating engine, and its own localization logic.<br />
-All of that lives in five megabytes of JS/CSS/XML sources. There are two builders, both on python 2: the old `dfbuild.py` and the new `df2.py`, and both do roughly the same thing—stripping comments, concatenating code, substituting values, minifying, and so on. That said, the client doesn't need a build in order to run—the sources will work perfectly well as they are.
+All of that lives in five megabytes of JS/CSS/XML sources. There are two builders, both on Python 2: the old `dfbuild.py` and the new `df2.py`, and both do roughly the same thing—stripping comments, concatenating code, substituting values, minifying, and so on. That said, the client doesn't need a build in order to run—the sources will work perfectly well as they are.
 
-That's it. It just works. I only rewrote the builder for python 3, for the sake of tidiness.
+That's it. It just works. I only rewrote the builder for Python 3, for the sake of tidiness.
 
 ## XXVIII. What Can't Dragonfly Do?
 
@@ -124,7 +124,7 @@ All right, this doesn't look hard. There is a description of the technology. The
 
 The problem is that this is an entirely new entity for Presto—and a huge one. All the previous changes were either relatively small or simply extended capabilities already built into the engine.
 
-Naturally, I first went looking for any kind of foothold, and I even found something. For instance, `ShadowRoot` does exist in Opera's sources, but it is absolutely not the one we need. It is about SVG `<use>`; SVG also creates a tree that is invisible from the outside, but it does so by cloning. For Shadow DOM that approach is fundamentally wrong. A node assigned to a `<slot>` is obliged to retain its identity; `host.firstChild`, `event.target` inside its own scope, and the object a script is already holding must all keep pointing at one and the same node.
+Naturally, I first went looking for any kind of foothold, and I even found something. For instance, `ShadowRoot` does exist in Opera's sources, but it is not at all the one we need. It is about SVG `<use>`; SVG also creates a tree that is invisible from the outside, but it does so by cloning. For Shadow DOM that approach is fundamentally wrong. A node assigned to a `<slot>` is obliged to retain its identity; `host.firstChild`, `event.target` inside its own scope, and the object a script is already holding must all keep pointing at one and the same node.
 
 The old architecture did have other useful groundwork, though. `DOM_DocumentFragment` already owned a separate physical `HE_DOC_ROOT`. Printing, XSLT, and that same SVG had accustomed part of the engine to the existence of multiple trees. `HTML_Element` was able to take rare extensions in the form of `ComplexAttr` without inflating every element on the page. `ElementRef` notified its owner when a node was destroyed. CSS and layout had central places through which new semantics could be routed without rewriting literally everything.
 
@@ -147,9 +147,9 @@ That is why I fell back on a capability I described at the very beginning. **Sha
 
 ## XXXI. What's Next?
 
-Now that we have a full-featured debugger, we can turn the browser loose on a site, see what specifically doesn't work, and get down to it. It is still too early to get down to it, but the foundation is there now.
+Now that we have a full-featured debugger, we can turn the browser loose on a site, see what specifically doesn't work, and get to work. Too early for that work yet—but the foundation is there now.
 
-The main point where effort will be applied is, of course, ECMAScript. Plenty has already been said about how pointless a browser is without modern JS. Then CSS. And along the way, the many APIs that everything else rests on.
+The main place the effort will go is, of course, ECMAScript. Plenty has already been said about how pointless a browser is without modern JS. Then CSS. And along the way, the many APIs that everything else rests on.
 
 For a while yet the browser will still look like it is stuck in 2013. But once all the core features are implemented, support for the modern web will be restored very quickly.
 

@@ -21,18 +21,18 @@ lang: en
 - **[XVII. Patches for the Entire Internet and Other Insane Discoveries](#xvii-patches-for-the-entire-internet-and-other-insane-discoveries)**
 - **[XVIII. What's Next?](#xviii-whats-next)**
 
-Last time I left off with the fact that we need **ES2015**. Without upgrading Carakan (which knows ECMAScript 5.1 perfectly well, but nothing about newer specs), we won't just fail to use the modern web — we won't even be able to run many tests.
+Last time I finished by saying that we need **ES2015**. Without upgrading Carakan (which knows ECMAScript 5.1 perfectly well, but nothing about newer specs), we won't just fail to use the modern web—we won't even be able to run many tests.
 
 The catch is that JS engines are, how should I put it, **complex**. The JavaScript language was born in agony, without any grand design, and turned out the way it turned out. On the one hand, it has a minimal barrier to entry; on the other, it is full of ambiguities, edge cases, and mind-bending logic. Early implementations constantly diverged, and it was not uncommon for developers to have to write the same code differently for different browsers.
 
-Standardization was meant to solve at least some of these problems and prevent new ones from appearing. De facto, it worked, but the standards cemented the inherent problems of the language, and the engine has to deal with them.
+Standardization was meant to solve at least some of these problems and prevent new ones from appearing. In practice it worked, but the standards also cemented the language's inherent problems, and the engine has to live with them.
 
 ## XIII. A New Language for the Old Carakan
 
 A language engine is a parser, an intermediate representation, an interpreter, a garbage collector, a JIT for multiple architectures, and all of this must coherently implement a specification that sometimes dictates observable side effects down to the exact order of property accesses.<br />
-And here I won't pretend that I understand any of this. Quite the opposite: I have no idea how such engines work, let alone how to write them. Developers with that kind of understanding and experience are the absolute elite, rare unicorns (to which I definitely do not belong), and this is one of the reasons why there are only three such engines in major browsers today (technically more exist, like experimental or hobbyist engines passing Test262, but they are also immensely complex).
+And here I won't pretend that I understand any of this. Quite the opposite: I have no idea how such engines work, let alone how to write them. Developers with that kind of understanding and experience are a true elite, rare unicorns (a club I am definitely not in), and this is one of the reasons why there are only three such engines in major browsers today (technically more exist, like experimental or hobbyist engines passing Test262, but they are also immensely complex).
 
-I would never have been able to add support for the new language edition to Carakan on my own, so AI agents took over all the work once again. I just provided them with a working framework: a feature is written, tests are run, a second model conducts a code review, bugs are fixed, and so on. Exactly what happens in a normal development process, just a hundred times faster. Fascinating and terrifying at the same time.
+I would never have been able to add support for the new language edition to Carakan on my own, so AI agents took over all the work once again. I just gave them a working framework: write a feature, run the tests, have a second model review the code, fix what it finds, repeat. Exactly what happens in a normal development process, only a hundred times faster. Fascinating and terrifying at the same time.
 
 Accomplished in a week:
 - Classes with inheritance and `super`.
@@ -43,44 +43,44 @@ Accomplished in a week:
 - Template literals.
 - Destructuring, default parameters, rest parameters, spread syntax.
 - `Symbol`. `Map`, `Set`, `WeakMap`, `WeakSet`. `Promise`.
-- And on top of that — `async`/`await`, which is technically ES2017, but without them, modern code simply doesn't run.
+- And on top of that—`async`/`await`, which is technically ES2017, but without them, modern code simply doesn't run.
 
-In numbers: **66,160 added lines across 581 files, 40,175 of which are in Carakan itself.** In the ECMAScript tests, the engine's score grew from 30,282 to **49,789**. In html5test — from 354 to **370 out of 555**.
+In numbers: **66,160 added lines across 581 files, 40,175 of which are in Carakan itself.** In the ECMAScript tests, the engine's score grew from 30,282 to **49,789**. In html5test—from 354 to **370 out of 555**.
 
-But numbers aren't the main thing here. Previously, a page that included a modern script would lose it entirely: the parser would trip on the first arrow function it saw, and **nothing** else would execute. These additions provided a qualitative leap: the browser stopped tripping over syntax and started tripping over content. This is a much more advantageous position to be in.
+But numbers aren't the main thing here. Previously, a page that included a modern script would lose it entirely: the parser would trip on the first arrow function it saw, and **nothing** else would execute. These additions provided a qualitative leap: the browser stopped tripping over syntax and started tripping over content. That's a far better place to be.
 
 Two technical details that show the nature of the work.
 
-**Some of the new constructs were intentionally left without JIT acceleration.** The most obvious example is generators. A regular function lives on the stack: it's called, does its job, and returns. A generator has to pause mid-execution, yield a value outside, survive yielding control, and then resume from the exact same spot — with its local variables intact, unfinished `try` blocks, and open `finally` blocks. Carakan's JIT knows how to turn code into machine instructions, but it cannot express a function that stops halfway. Therefore, each generator gets its own execution context with its own stack and runs in the interpreter. For the same reason, `async` functions, references to `new.target`, and functions with default parameters bypass the JIT entirely.
+**Some of the new constructs were intentionally left without JIT acceleration.** The most obvious example is generators. A regular function lives on the stack: it's called, does its job, and returns. A generator has to pause mid-execution, hand a value out, survive giving up control, and then resume from the exact same spot—with its local variables intact, unfinished `try` blocks, and open `finally` blocks. Carakan's JIT knows how to turn code into machine instructions, but it cannot express a function that stops halfway. So each generator gets its own execution context with its own stack and runs in the interpreter. For the same reason, `async` functions, references to `new.target`, and functions with default parameters bypass the JIT entirely.
 
-This list of JIT exceptions existed in the engine from the start. For example, it turned out that Carakan's JIT always ignored any function containing `try`/`catch`. No documentation remains explaining why, but it's no big secret: it is incredibly hard! Early JIT compilers (including Google's V8) universally failed to optimize functions with `try`/`catch` and `try`/`finally` (in V8, this issue was literally known as `bailout reason: try catch statement`). Exceptions break the control flow graph, and writing a JIT for them is hellish. So the decision not to compile such functions doesn't look like throwing up a white flag here.
+This list of JIT exceptions existed in the engine from the start. For example, it turned out that Carakan's JIT always ignored any function containing `try`/`catch`. No documentation survives to explain why, but it's no secret: the thing is brutally hard. Early JIT compilers (including Google's V8) universally failed to optimize functions with `try`/`catch` and `try`/`finally` (in V8, this issue was literally known as `bailout reason: try catch statement`). Exceptions break the control flow graph, and writing a JIT for them is hellish. So the decision not to compile such functions doesn't look like surrender.
 
-And I understand them. I have no desire to touch the JIT right now, even with all the agents at my disposal — it is likely the most complex part of the entire browser, and thankfully, it's not strictly necessary for things to work. The new semantics are implemented in the parser, bytecode, and interpreter; the machine code generator only received the bare minimum of required tweaks.
+And I understand them. I have no desire to touch the JIT right now, even with all the agents at my disposal—it is likely the most complex part of the entire browser, and thankfully, it's not strictly necessary for things to work. The new semantics are implemented in the parser, bytecode, and interpreter; the machine code generator only received the bare minimum of required tweaks.
 
-Another detail: **compliance with the old standard has degraded**. On the canonical test suite for ES5.1, the engine used to pass 11,568 out of 11,572, and now it passes 11,318. The thing is, ES2015 doesn't just add to its predecessor in some places; it **overrides** its rules. A classic example: in ES5.1, the `length` property of a function must survive deletion, but in ES2015, they made it configurable. You can only implement one behavior of the two, and there's no point in writing a bunch of toggle switches.
+Another detail: **compliance with the old standard has degraded**. On the canonical test suite for ES5.1, the engine used to pass 11,568 out of 11,572, and now it passes 11,318. The thing is, ES2015 doesn't just add to its predecessor in some places; it **overrides** its rules. A classic example: in ES5.1, the `length` property of a function must survive deletion, but in ES2015, they made it configurable. You can implement only one of the two behaviors, and there's no point wiring up a pile of toggles.
 
 ## XIV. Three Deaths of a Single Page
 
-During the overhaul of Carakan, unexpected problems constantly popped up that seemingly had nothing to do with JavaScript. As a reminder, the engine can be compiled and run in a standalone mode, and this is the mode used for testing. The tests are green, but after a full build, the browser itself crashes.<br />
-Here is one such story involving Yandex image search — the browser started dying on this page 100% of the time.
+While Carakan was being overhauled, unexpected problems kept surfacing that seemed to have nothing to do with JavaScript. As a reminder, the engine can be compiled and run in a standalone mode, and this is the mode used for testing. The tests are green, but after a full build, the browser itself crashes.<br />
+Here is one such story involving Yandex image search—the browser started dying on this page 100% of the time.
 
-It all starts with a regular script error occurring on the page. Nothing special, considering the volume of changes, just a mismatch somewhere. In this situation, the browser is supposed to write a line to the log like "error in such-and-such place, line so-and-so" and keep on living.
+It starts with an ordinary script error on the page. Nothing special, considering the volume of changes, just a mismatch somewhere. In this situation, the browser is supposed to write a line to the log like "error in such-and-such place, line so-and-so" and keep on living.
 
 **Instead, it died while trying to construct this very string.** The error never appeared because the crash occurred *inside* the error-reporting mechanism.
 
-There was only one clue — the crash log, and fragments of a half-built string inside it: `\n\nError `, ` line 1,`, `203 in <`. Everything was on line 1 because the script was minified. The immediate theory was that the minified file was too long: the engine stores the source code position in a packed format with a hard ceiling, and it had overflowed. The theory proved wrong — upon overflow, the value becomes *smaller*, and a smaller value still points somewhere inside the file.
+There was only one clue—the crash log, and fragments of a half-built string inside it: `\n\nError `, ` line 1,`, `203 in <`. Everything was on line 1 because the script was minified. The immediate theory was that the minified file was too long: the engine stores the source code position in a packed format with a hard ceiling, and it had overflowed. The theory proved wrong—upon overflow, the value becomes *smaller*, and a smaller value still points somewhere inside the file.
 
-The real culprit was found in arrow functions. The syntax `x => expr` doesn't have a body with a `return`, so the parser first parses the expression and then replaces it with a return construct — and during this replacement, **it loses the mark indicating where in the file this took place**.
+The real culprit was found in arrow functions. The syntax `x => expr` doesn't have a body with a `return`, so the parser first parses the expression and then replaces it with a return construct—and during this replacement, **it loses the mark indicating where in the file this took place**.
 
-The engine stores the position packed: two 32-bit words squeezing in the character number, line number, and length. There is no dedicated "position not set" flag — instead, all bits are set to `1`. A function to check this value exists in the code, but they simply forgot to call it in this specific place.
+The engine stores the position packed: two 32-bit words squeezing in the character number, line number, and length. There is no dedicated "position not set" flag—instead, all bits are set to `1`. A function to check this value exists in the code, but they simply forgot to call it in this specific place.
 
-Because of this, the engine interpreted the ones as normal numbers and got "character number 16,777,215" — the maximum value that fits into the 24 bits allocated for the character index. It then tried to access that character in a 30-kilobyte file and predictably crashed.
+Because of this, the engine interpreted the ones as normal numbers and got "character number 16,777,215"—the maximum value that fits into the 24 bits allocated for the character index. It then tried to access that character in a 30-kilobyte file and predictably crashed.
 
-**Fixed it — and the page crashed again, this time in the garbage collector.** This is the worst kind of crash: it doesn't happen when an action occurs, but rather when the GC traverses memory and stumbles upon a cell containing something it didn't expect.
+**Fixed it—and the page crashed again, this time in the garbage collector.** This is the worst kind of crash: it doesn't happen when an action occurs, but rather when the GC traverses memory and stumbles upon a cell containing something it didn't expect.
 
-The culprit was a check the engine uses to distinguish "a variable holds a value" from "a variable holds a reference to an actual storage location." The check looked at an internal marker — but this marker covered two different things: such references, and **symbols**, the new data type from ES2015. A variable containing a symbol, captured by a nested function, was read as a reference, and the engine dereferenced something that had never been a reference. The most interesting part: this check came straight from the original source code. The bug was completely unreachable right up until a symbol could end up in a variable. Symbols appeared when we implemented ES2015.
+The culprit was a check the engine uses to distinguish "a variable holds a value" from "a variable holds a reference to an actual storage location." The check looked at an internal marker—but this marker covered two different things: such references, and **symbols**, the new data type from ES2015. A variable containing a symbol, captured by a nested function, was read as a reference, and the engine dereferenced something that had never been a reference. The most interesting part: this check came straight from the original source code. The bug was completely unreachable right up until a symbol could end up in a variable. Symbols appeared when we implemented ES2015.
 
-**Fixed this too — and the page crashed for a third time**, roughly on every third load, and this time not in JavaScript at all, but in the network cache. There, the browser accumulates incoming bytes in a small buffer, and when it has gathered enough data, it migrates to a larger one. During the migration, the "how much accumulated" counter retained its old value, while the underlying buffer shrank — and the next copy operation read using the counter from a buffer that had become shorter. This had absolutely nothing to do with our work: no one had simply ever reached this point in the code because the browser died earlier.
+**Fixed this too—and the page crashed for a third time**, roughly on every third load, and this time not in JavaScript at all, but in the network cache. There, the browser accumulates incoming bytes in a small buffer, and when it has gathered enough data, it migrates to a larger one. During the migration, the "how much accumulated" counter retained its old value, while the underlying buffer shrank—and the next copy operation read using the counter from a buffer that had become shorter. None of this had anything to do with our work: nobody had ever reached that point in the code, because the browser died earlier.
 
 Three different, consecutive historical bugs in three different subsystems, exposed purely because Carakan no longer crashes on arrow functions.
 
@@ -90,10 +90,10 @@ Reading the previous parts, you might have asked yourself: if Opera was such an 
 
 It's tempting to simplify the story to "a big evil corporation crushed a small independent company." There is some truth to that, but history, as always, is much more complex.
 
-Picture this: the early 2000s, midnight. Under the desk, the fan inside your beige Celeron case is soothingly whirring, and the 10-gigabyte hard drive occasionally crunches. Everyone at home has fallen asleep, and no one will distract you from the greatest pleasure of all: night-tariff internet. The phone line is free, dial-up, connect, 33.6 kbps — and a couple of minutes later, the Internet with a capital 'I' shimmers with GIFs on your CRT monitor. And until morning — chats, forums, fanfics about your favorite TV show, funny pictures...
+Picture this: the early 2000s, midnight. Under the desk, the fan inside your beige Celeron case is soothingly whirring, and the 10-gigabyte hard drive occasionally crunches. Everyone at home has fallen asleep, and no one will distract you from the greatest pleasure of all: night-tariff internet. The phone line is free, dial-up, connect, 33.6 kbps—and a couple of minutes later, the Internet with a capital 'I' shimmers with GIFs on your CRT monitor. And until morning—chats, forums, fanfics about your favorite TV show, funny pictures...
 
-But let's strip away the nostalgic flair: using this was very inconvenient. Your browser 99% of the time was Internet Explorer 6.0 (or even 5.0), whose entire paradigm assumed a simple window displaying whatever loaded, plus a few basic navigation buttons. The "Donkey" (as IE was affectionately and not-so-affectionately nicknamed by Russian-speaking users) was, from a UX perspective, clunky, unresponsive, and highly capricious — but at least it was always in the system. Shell wrappers existed, like Maxthon and Avant Browser, which solved some usability issues (adding tabs, for example), but they were still slow.<br />
-There was also Netscape Navigator — or "Nutscape," as some called it. It's trendy to remember it fondly nowadays, but frankly, the user experience wasn't much different from IE. Yes, it was better — but you had to get it from somewhere; NN 4.5+ meant a 15-megabyte installer that would take all night, or even two, to download, and then it would eat up precious disk space. Given the setup, it was easier to stick with IE. Well, unless you stumbled upon an installer on a CD bundled with local tech and gaming magazines like *Hacker*, *Computerra*, or *Game.EXE* — then you might install it as a secondary browser.
+But strip away the nostalgic haze: it was a real pain to use. Your browser 99% of the time was Internet Explorer 6.0 (or even 5.0), whose entire paradigm assumed a simple window displaying whatever loaded, plus a few basic navigation buttons. The "Donkey" (as IE was affectionately and not-so-affectionately nicknamed by Russian-speaking users) was, from a UX perspective, clunky, unresponsive, and highly capricious—but at least it was always in the system. Shell wrappers existed, like Maxthon and Avant Browser, which solved some usability issues (adding tabs, for example), but they were still slow.<br />
+There was also Netscape Navigator—or "Nutscape," as some called it. It's trendy to remember it fondly nowadays, but frankly, the user experience wasn't much different from IE. Yes, it was better—but you had to get it from somewhere; NN 4.5+ meant a 15-megabyte installer that would take all night, or even two, to download, and then it would eat up precious disk space. Given the setup, it was easier to stick with IE. Well, unless you stumbled upon an installer on a CD bundled with local tech and gaming magazines like *Hacker*, *Computerra*, or *Game.EXE*—then you might install it as a secondary browser.
 
 But one day, on one of these discs, you stumble upon something new and interesting. Opera 4, 1.8 megabytes, and it works with some incredible responsiveness and convenience. I remember reading Harry Potter fan translations in IE, and it was barely tolerable. Scrolling the page took seconds, and the "donkey" simply didn't know how to zoom text properly. Opera did it instantly.
 
@@ -101,27 +101,27 @@ But one day, on one of these discs, you stumble upon something new and interesti
   <img src="{{ '/img/opera40.png' | relative_url }}" alt="1.8 mb of pure awesomeness" />
 </p>
 
-Opera was a paid product; some versions had a limited trial period, others displayed an unremovable banner. If you, like me, lived in Russia in the 90s/00s, you had neither the money nor the means to buy software — and the need to find a "crack" bothered absolutely no one.<br />
-Perhaps this is one of the reasons why Opera became so deeply rooted in the post-Soviet space. I can assume that in a different environment, I would have pondered the choice between a free but clunky product and a paid alternative. In a situation where all your software was pirated by default, the dilemma didn't exist.
+Opera was a paid product; some versions had a limited trial period, others displayed an unremovable banner. If you, like me, lived in Russia in the 90s/00s, you had neither the money nor the means to buy software—and the need to find a "crack" bothered absolutely no one.<br />
+Perhaps that is one reason Opera took such deep root across the former Soviet Union. I imagine that in a different environment I would have weighed the choice between a free but clunky product and a paid alternative. In a situation where all your software was pirated by default, the dilemma didn't exist.
 
-One way or another, in CIS countries, Opera was a massive hit. In its best years, the desktop version held a 50% market share in some of them. Global statistics, however, were an order of magnitude worse — peaking at no more than 5%. Note that I'm talking specifically about desktop versions; the mobile market was a different story, where Opera Mobile and Opera Mini together held a quarter of a constantly growing pie.
+One way or another, in CIS countries, Opera was a massive hit. In its best years, the desktop version held a 50% market share in some of them. Global statistics, however, were an order of magnitude worse—peaking at no more than 5%. Note that I'm talking specifically about desktop versions; the mobile market was a different story, where Opera Mobile and Opera Mini together held a quarter of a constantly growing pie.
 
-In September 2005, the browser changed its monetization model, becoming completely free for the user and instead selling its popularity (via search deals). Around 2007, the landscape looked like this: there was IE, absolutely terrible in every way, but pre-installed with Windows, holding 80% of the market. There was Safari, if you had a Mac. And there was Firefox and Opera — these were the two real, "true" browsers, with small but fiercely loyal audiences.
+In September 2005, the browser changed its monetization model, becoming completely free for the user and instead selling its popularity (via search deals). Around 2007, the landscape looked like this: there was IE, terrible in every way but pre-installed with Windows, holding 80% of the market. There was Safari, if you had a Mac. And there was Firefox and Opera—these were the two real, "true" browsers, with small but fiercely loyal audiences.
 
 But why wasn't their audience growing? I'm not going to undertake a comprehensive analysis, but here is how the picture looks from my perspective.
 
-If you had to code web pages back then, you know that clients explicitly demanded "it has to work in Internet Explorer" — usually meaning Internet Explorer 6.0. No matter how crooked it was, no matter how poorly it supported convenient features, all effort went into it. Next, separate support was added for Firefox — it securely held second place and had the absolutely overpowered Firebug, so developers loved it. Everything else was done with leftover resources; a client might still demand Safari support, but hardly anyone bothered with Opera.<br />
-As a result, a user who decided to try an alternative browser often found that pages looked "wrong" — even though the problem might not be the browser, but the page itself. The developers at Opera Software tracked and manually fixed these cases — sometimes in C++ code, sometimes using an external set of compatibility scripts (a very interesting mechanism I'll discuss below), and in newer versions, the problems would be resolved. But the user was already gone and wouldn't come back.<br />
-Sometimes sites intentionally served completely alternative content to Opera — whether out of good intentions or sheer malice. Simplified layouts, broken scripts — who was going to strain themselves for a tiny audience?<br />
+If you had to code web pages back then, you know that clients explicitly demanded "it has to work in Internet Explorer"—usually meaning Internet Explorer 6.0. However badly built it was, however poorly it supported the useful features, all the effort went into it. Next, separate support was added for Firefox—it held second place comfortably and had the wildly overpowered Firebug, so developers loved it. Everything else got whatever was left over; a client might still demand Safari support, but hardly anyone bothered with Opera.<br />
+As a result, a user who decided to try an alternative browser often found that pages looked "wrong"—even though the problem might not be the browser, but the page itself. The developers at Opera Software tracked and manually fixed these cases—sometimes in C++ code, sometimes using an external set of compatibility scripts (a very interesting mechanism I'll discuss below), and in newer versions, the problems would be resolved. But the user was already gone and wouldn't come back.<br />
+Sometimes sites deliberately served Opera entirely different content—out of good intentions or out of sheer spite. Simplified layouts, broken scripts—who was going to strain themselves for a tiny audience?<br />
 Opera even introduced a User-Agent spoofing mechanism, meaning the browser had to actively pretend to be something else. The site saw not Opera, but, say, Internet Explorer, and in most cases, everything worked fine.<br />
 But this led to Opera's visible market share shrinking! And because of that, even fewer developers cared about testing and adapting their sites. Desktop Opera fell into limbo and never truly escaped it.
 
-The arrival of Chrome in 2008 was perceived as an incredibly positive event. The very idea of an entirely new, fast, convenient, and open browser sparked sheer delight. Google was the "do no evil" corporation back then, genuinely advancing the internet, and it felt like it would always be this way. They weren't setting out to crush Opera Software ASA — Opera's share was too small for the megacorp to care. This was a competition for world domination in a swamp that no one had been able to stir up for years.<br />
+The arrival of Chrome in 2008 was received as an unambiguously good thing. The very idea of a brand-new, fast, pleasant, open browser was a pure delight. Google was the "do no evil" corporation back then, genuinely advancing the internet, and it felt like it would always be this way. They weren't setting out to crush Opera Software ASA—Opera's share was too small for the megacorp to care. This was a competition for world domination in a swamp that no one had been able to stir up for years.<br />
 We know the results. Microsoft tried to compete, released a few more versions of IE, but ultimately lost and accepted defeat. Mozilla, living comfortably on search contracts with Google, neglected Firefox, instead throwing a ton of resources at the stillborn Firefox OS. Chrome became the new IE, and the tiny Opera was simply washed away by the tsunami raised from the clash of two yokozunas.
 
 ## XVI. How (and Why) to Properly Pretend
 
-I didn't just give in to nostalgia for no reason. The Identity spoofing mechanism mentioned in this story is highly relevant to this day. A ton of websites, if you visit them with an old Opera UA, will, at best, warn you that your browser is outdated. At worst, they'll throw an error page — Google Search is notoriously guilty of this. And it only behaves this way with Opera — change the User-Agent to Firefox, and the error magically disappears.<br />
+My nostalgia had a point. The identity spoofing mechanism this story mentions is still very much needed today. A ton of websites, if you visit them with an old Opera UA, will, at best, warn you that your browser is outdated. At worst, they'll throw an error page—Google Search is notoriously guilty of this. And it only behaves this way with Opera—change the User-Agent to Firefox, and the error magically disappears.<br />
 It's astonishing. Pages that could never have been opened in a browser that has been dead for this many years are *still* concerned with its existence. Google did this fifteen years ago and continues to do it today.
 
 To bypass this, two complementary fixes were required.
@@ -135,7 +135,7 @@ Opera/9.80 (X11; Linux x86_64) Presto/2.12.388 Version/12.15
 This is a great illustration of the sheer nonsense that makes up all browser UAs. The `9.80` here is not some codename or mistake; it was left that way intentionally. You see, websites used to compare browser versions **as a string**, which meant `"9.8" > "10.00"`. The actual correct version had to be appended separately at the end; the User-Agent strings of modern browsers consist of this kind of hackery almost entirely.
 
 But what does this mean for us?<br />
-First, we need to get rid of the `Opera` identifier. We do not own this trademark, and the token itself triggers sites to issue warnings. For my own internal reasons, I decided to use the Latin word `Otium` (a polysemantic term that translates roughly to "leisure" or "idleness") as the exact antonym of the Latin meaning of the word `Opera` ("labor" or "work").
+First, we need to get rid of the `Opera` identifier. We do not own this trademark, and the token itself triggers sites to issue warnings. For reasons of my own, I settled on the Latin word `Otium` (a polysemantic term that translates roughly to "leisure" or "idleness") as the exact antonym of the Latin meaning of the word `Opera` ("labor" or "work").
 
 Now the browser introduces itself like this:
 
@@ -146,18 +146,18 @@ Otium/2026.7 (X11; Linux x86_64) Presto/2.13.0
 Besides the UA, I also had to fix other logic that handles browser identification (`navigator.appName`, `navigator.appVersion`, etc.; though I couldn't bring myself to touch `window.opera`).
 
 Secondly, the spoofing mechanism was overhauled. Initially, it was simple: a static list of user-agents was hardcoded into the browser, and you could specify a different one for each specific domain, but you couldn't modify the core list itself.<br />
-Now identification is completely configurable — an `identity.ini` has been added to the config suite, and all spoofing rules are pulled directly from it.
+Now identification is fully configurable—an `identity.ini` has been added to the config suite, and all spoofing rules are pulled directly from it.
 
 ## XVII. Patches for the Entire Internet and Other Insane Discoveries
 
-It's high time to talk about `browser.js` — the mechanism Opera used to fix other people's broken websites right inside their own browser.<br />
+It's high time to talk about `browser.js`—the mechanism Opera used to fix other people's broken websites right inside their own browser.<br />
 The mechanism itself is quite simple: the browser shipped with several `browser.js` files (each for a specific region) containing patches for specific websites. These patches were loaded into the context transparently to the user, doing the work the webmaster deemed unnecessary.<br />
-The scale! The idea! The mechanism clearly didn't appear out of nowhere, and even though they didn't have to patch the *entire* internet, the most highly trafficked sites of the era were actively modified on the fly. Capital One, E*TRADE, Expedia, AOL, IBM, Amazon, Yahoo Japan, AT&T, T-Online, Asahi, Baidu, Wimbledon — places where a broken page cost the user nerves and money.<br />
+The scale! The idea! The mechanism clearly didn't appear out of nowhere, and even though they didn't have to patch the *entire* internet, the most highly trafficked sites of the era were actively modified on the fly. Capital One, E*TRADE, Expedia, AOL, IBM, Amazon, Yahoo Japan, AT&T, T-Online, Asahi, Baidu, Wimbledon—places where a broken page cost the user nerves and money.<br />
 The browser constantly received updates for these patches from Opera's servers. To protect against tampering, the files were cryptographically signed: a base64-encoded signature sits in a comment on the very first line. A public RSA-2048 key is hardcoded into the Opera binary to verify the signature, and if the file had been altered, the feature disabled itself.
 
 ---
 
-But sometimes `browser.js` wasn't enough to fix the broken web. Sites were written poorly because crooked browsers allowed it, and Opera engineers occasionally had to deviate from the standards (`modules/style/src/css_selector.cpp:721`):
+But sometimes `browser.js` wasn't enough to fix the broken web. Sites were written badly because broken browsers let them be, and Opera engineers occasionally had to deviate from the standards (`modules/style/src/css_selector.cpp:721`):
 
 ```cpp
 // Case sensitive id selectors in strict mode (according to spec.)
@@ -175,13 +175,13 @@ Sometimes hacks for specific sites were nailed directly into the C++ engine. Her
    makes sure it gets hidden in this case. */
 ```
 
-"Page designers (read: gmail)." Negative positioning off-screen as a way to hide a loading iframe — and an entire branch of engine code dedicated just to making sure such an iframe doesn't stretch across the entire screen in mobile mode.
+"Page designers (read: gmail)." Negative positioning off-screen as a way to hide a loading iframe—and an entire branch of engine code dedicated just to making sure such an iframe doesn't stretch across the entire screen in mobile mode.
 
 Such a familiar pain.
 
 ---
 
-In general, Opera often resorted to embedding various hardcoded checks. In `modules/rootstore/extra/untrusted/`, there is a pile of header files containing known compromised certificates, byte-for-byte. The list of what is stored there reads like a timeline of every major failure in the history of public key infrastructure:
+Opera resorted to embedding hardcoded checks fairly often. In `modules/rootstore/extra/untrusted/`, there is a pile of header files containing known compromised certificates, byte-for-byte. The list of what is stored there reads like a timeline of every major failure in the history of public key infrastructure:
 
 ```cpp
 UNTRUSTED_BASE_ENTRY(FAKE_MS_OBJECTSIGN_1, NULL, "Fraudulent certificate, NOT Microsoft" )
@@ -200,7 +200,7 @@ This mechanism was supplemented by updates via `certs.opera.com`. The documentat
 Every applied fix opens up a dozen new necessary tweaks, and there is no end in sight. It's exhilarating and terrifying at the same time. Fortunately, AI agents don't suffer from burnout.
 
 On August 30, 1995, Jon Stephenson von Tetzchner and Geir Ivarsøy founded Opera Software, and this day is considered Opera's "birthday."<br />
-August 30, 2026, will arrive exactly a month from the time I'm writing this. I would love for the "revived" Opera to be capable of handling the modern web by that day. It's a very broad goal, and I have absolutely no idea if it is achievable at all.
+August 30, 2026, will arrive exactly a month from the time I'm writing this. I would love for the "revived" Opera to be capable of handling the modern web by that day. It's a very broad goal, and I have no idea whether it's achievable.
 
 But who can stop me from trying?
 
