@@ -1,7 +1,7 @@
 # Opera Presto: цифровая археология / Digital Archaeology
 
-**Читать на сайте: [tflavius.github.io/archaeology](https://tflavius.github.io/archaeology/)**<br />
-**Read online: [tflavius.github.io/archaeology](https://tflavius.github.io/archaeology/)**
+**Читать на сайте: [tflavius.github.io](https://tflavius.github.io/)**<br />
+**Read online: [tflavius.github.io](https://tflavius.github.io/)**
 
 **[RU](#оглавление-ru)** | **[EN](#contents-en)**
 
@@ -11,7 +11,7 @@
 
 ### Часть 1. Движок, который мы потеряли: цифровая археология Opera Presto
 
-[Читать здесь](opera-presto-archaeology.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/)
+[Читать здесь](opera-presto-archaeology.md) · [читать на сайте](https://tflavius.github.io/ru/)
 
 * **[I. Эпоха до монополии: чем была Opera и почему её больше нет](opera-presto-archaeology.md#i-эпоха-до-монополии-чем-была-opera-и-почему-её-больше-нет)**
 * **[II. Цифровая археология трёх миллионов строк кода](opera-presto-archaeology.md#ii-цифровая-археология-трёх-миллионов-строк-кода)**
@@ -32,7 +32,7 @@
 
 ### Часть 2. Движок, который мы оживляем: новые трюки для Opera Presto
 
-[Читать здесь](opera-presto-revival.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/revival/)
+[Читать здесь](opera-presto-revival.md) · [читать на сайте](https://tflavius.github.io/ru/revival/)
 
 * **[VII. Есть только путь](opera-presto-revival.md#vii-есть-только-путь)**
 * **[VIII. «Храповик»](opera-presto-revival.md#viii-храповик)**
@@ -46,7 +46,7 @@
 
 ### Часть 3. Движок, который чему-то учится: современный JavaScript и древние баги Opera Presto
 
-[Читать здесь](opera-presto-modern-js.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/modern/)
+[Читать здесь](opera-presto-modern-js.md) · [читать на сайте](https://tflavius.github.io/ru/modern/)
 
 * **[XIII. Новый язык для старого Carakan](opera-presto-modern-js.md#xiii-новый-язык-для-старого-carakan)**
 * **[XIV. Три смерти одной страницы](opera-presto-modern-js.md#xiv-три-смерти-одной-страницы)**
@@ -57,7 +57,7 @@
 
 ### Часть 4. Движок, которому нужен CSS
 
-[Читать здесь](opera-presto-modern-css.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/css/)
+[Читать здесь](opera-presto-modern-css.md) · [читать на сайте](https://tflavius.github.io/ru/css/)
 
 * **[XIX. Как завести CSS?](opera-presto-modern-css.md#xix-как-завести-css)**
 * **[XX. Эффект домино](opera-presto-modern-css.md#xx-эффект-домино)**
@@ -65,7 +65,7 @@
 
 ### Часть 5. Движок, который обогнал Chrome: полный ES2015 и новый медиабэкенд
 
-[Читать здесь](opera-presto-es2015-gstreamer.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/es2015-gstreamer/)
+[Читать здесь](opera-presto-es2015-gstreamer.md) · [читать на сайте](https://tflavius.github.io/ru/es2015-gstreamer/)
 
 * **[XXII. Шаг назад, два шага вперёд](opera-presto-es2015-gstreamer.md#xxii-шаг-назад-два-шага-вперёд)**
   * [XXII.I JS-машина из 2009 года](opera-presto-es2015-gstreamer.md#xxiii-js-машина-из-2009-года)
@@ -90,7 +90,7 @@
 
 ### Часть 6. Opera Dragonfly и Shadow DOM
 
-[Читать здесь](opera-presto-dragonfly-shadow-dom.md) · [читать на сайте](https://tflavius.github.io/archaeology/ru/dragonfly-shadow-dom/)
+[Читать здесь](opera-presto-dragonfly-shadow-dom.md) · [читать на сайте](https://tflavius.github.io/ru/dragonfly-shadow-dom/)
 
 * **[XXVI. Эпоха до F12: Alert-Driven Development](opera-presto-dragonfly-shadow-dom.md#xxvi-эпоха-до-f12-alert-driven-development)**
 * **[XXVII. Dragonfly: вещь в себе](opera-presto-dragonfly-shadow-dom.md#xxvii-dragonfly-вещь-в-себе)**
@@ -105,7 +105,7 @@
 
 ### Part 1. The Engine We Lost: Digital Archaeology of Opera Presto
 
-[Read here](opera-presto-archaeology-en.md) · [read online](https://tflavius.github.io/archaeology/)
+[Read here](opera-presto-archaeology-en.md) · [read online](https://tflavius.github.io/)
 
 * **[I. The Pre-Monopoly Era: What Opera Was and Why It's Gone](opera-presto-archaeology-en.md#i-the-pre-monopoly-era-what-opera-was-and-why-its-gone)**
 * **[II. Digital Archaeology of Three Million Lines of Code](opera-presto-archaeology-en.md#ii-digital-archaeology-of-three-million-lines-of-code)**
@@ -126,7 +126,7 @@
 
 ### Part 2. The Engine We're Bringing Back to Life: New Tricks for Opera Presto
 
-[Read here](opera-presto-revival-en.md) · [read online](https://tflavius.github.io/archaeology/revival/)
+[Read here](opera-presto-revival-en.md) · [read online](https://tflavius.github.io/revival/)
 
 * **[VII. This Is the Way](opera-presto-revival-en.md#vii-this-is-the-way)**
 * **[VIII. The Ratchet](opera-presto-revival-en.md#viii-the-ratchet)**
@@ -140,7 +140,7 @@
 
 ### Part 3. The Engine That Learns: Modern JavaScript and Ancient Bugs of Opera Presto
 
-[Read here](opera-presto-modern-js-en.md) · [read online](https://tflavius.github.io/archaeology/modern/)
+[Read here](opera-presto-modern-js-en.md) · [read online](https://tflavius.github.io/modern/)
 
 * **[XIII. A New Language for the Old Carakan](opera-presto-modern-js-en.md#xiii-a-new-language-for-the-old-carakan)**
 * **[XIV. Three Deaths of a Single Page](opera-presto-modern-js-en.md#xiv-three-deaths-of-a-single-page)**
@@ -151,7 +151,7 @@
 
 ### Part 4. The Engine That Needs CSS
 
-[Read here](opera-presto-modern-css-en.md) · [read online](https://tflavius.github.io/archaeology/css/)
+[Read here](opera-presto-modern-css-en.md) · [read online](https://tflavius.github.io/css/)
 
 * **[XIX. How Do You Get CSS Running?](opera-presto-modern-css-en.md#xix-how-do-you-get-css-running)**
 * **[XX. The Domino Effect](opera-presto-modern-css-en.md#xx-the-domino-effect)**
@@ -159,7 +159,7 @@
 
 ### Part 5. The Engine That Outpaced Chrome: Full ES2015 and a New Media Backend
 
-[Read here](opera-presto-es2015-gstreamer-en.md) · [read online](https://tflavius.github.io/archaeology/es2015-gstreamer/)
+[Read here](opera-presto-es2015-gstreamer-en.md) · [read online](https://tflavius.github.io/es2015-gstreamer/)
 
 * **[XXII. One Step Back, Two Steps Forward](opera-presto-es2015-gstreamer-en.md#xxii-one-step-back-two-steps-forward)**
   * [XXII.I A JS Machine from 2009](opera-presto-es2015-gstreamer-en.md#xxiii-a-js-machine-from-2009)
@@ -184,7 +184,7 @@
 
 ### Part 6. Opera Dragonfly and Shadow DOM
 
-[Read here](opera-presto-dragonfly-shadow-dom-en.md) · [read online](https://tflavius.github.io/archaeology/dragonfly-shadow-dom/)
+[Read here](opera-presto-dragonfly-shadow-dom-en.md) · [read online](https://tflavius.github.io/dragonfly-shadow-dom/)
 
 * **[XXVI. The Age Before F12: Alert-Driven Development](opera-presto-dragonfly-shadow-dom-en.md#xxvi-the-age-before-f12-alert-driven-development)**
 * **[XXVII. Dragonfly: A Thing-in-Itself](opera-presto-dragonfly-shadow-dom-en.md#xxvii-dragonfly-a-thing-in-itself)**
