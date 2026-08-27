@@ -523,7 +523,7 @@ I don't want to jump the gun on whether an old Opera can be taught new tricks. W
 
 I can't publish the compiled binaries or the source (except perhaps as patches, though I doubt anyone would want to bother with those). I'm open to suggestions, and I'm thinking about what could be done to actually release the project.
 
-Also, there will be no links here to a Telegram channel, a Patreon, or anything else. That's not the point.
+Also, there will be no links here to a donation page. The point of all this isn't the money.
 
 The point is that Opera was a browser built with love and understanding. You can see it in every line, from the "we don't need the STL" manifesto to the double rainbow in the CSS grammar. Refusing to publish the source felt like an injustice back then, and judging by the fact that someone eventually leaked it anyway, people inside the company felt the same. Some of them surely hoped a deep dive like this would happen one day.
 
