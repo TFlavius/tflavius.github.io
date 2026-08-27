@@ -87,7 +87,7 @@ lang: ru
 
 **Canvas и SVG.**
 - `Path2D` во всех трёх формах конструктора. `ellipse()`.
-- Пунктир: `setLineDafsh`/`getLineDash`/`lineDashOffset`.
+- Пунктир: `setLineDash`/`getLineDash`/`lineDashOffset`.
 - Режимы наложения через `globalCompositeOperation` поверх VEGA.
 - В SVG вычисленный стиль перестал переписывать современные ключевые слова `writing-mode` в легаси-значения SVG 1.1.
 
