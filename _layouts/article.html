@@ -11,7 +11,6 @@ layout: default
   {% assign s_sub = "Оживление движка Opera Presto, по неделям" %}
   {% assign s_close = "Закрыть" %}
   {% assign s_other = "English" %}
-  {% assign s_tg = "✈ Telegram-канал" %}
   {% assign other_url = page.url | remove_first: "/ru" %}
   {% if other_url == "" %}{% assign other_url = "/" %}{% endif %}
 {% else %}
@@ -21,7 +20,6 @@ layout: default
   {% assign s_sub = "Reviving the Opera Presto engine, week by week" %}
   {% assign s_close = "Close" %}
   {% assign s_other = "Русский" %}
-  {% assign s_tg = "✈ Telegram channel" %}
   {% assign other_url = "/ru" | append: page.url %}
 {% endif %}
 
@@ -63,7 +61,6 @@ layout: default
   </ul>
   <div class="series-nav-foot">
     <a href="{{ other_url | relative_url }}" lang="{% if page.lang == 'ru' %}en{% else %}ru{% endif %}">{{ s_other }}</a>
-    <a href="https://t.me/opera_revival">{{ s_tg }}</a>
   </div>
   <label for="series-nav" class="series-nav-dismiss">✕ {{ s_close }}</label>
 </nav>
