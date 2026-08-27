@@ -7,7 +7,7 @@ lang: ru
 ---
 
 <nav id="top" aria-label="Верхняя навигация">
-  НЕДЕЛЯ: <strong>I</strong>—<a href="{{ '/ru/revival/' | relative_url }}" title="Движок, который мы оживляем">II</a>—<a href="{{ '/ru/modern/' | relative_url }}" title="Движок, который чему-то учится">III</a>—<a href="{{ '/ru/css/' | relative_url }}" title="Движок, которому нужен CSS">IV</a>—<a href="{{ '/ru/es2015-gstreamer/' | relative_url }}" title="Движок, который обогнал Chrome">V</a>—<a href="{{ '/ru/dragonfly-shadow-dom/' | relative_url }}" title="Opera Dragonfly и Shadow DOM">VI</a> · <a href="{{ '/' | relative_url }}" lang="en">English</a> · <strong>Русский</strong>
+  НЕДЕЛЯ: <strong>I</strong>—<a href="{{ '/ru/revival/' | relative_url }}" title="Движок, который мы оживляем">II</a>—<a href="{{ '/ru/modern/' | relative_url }}" title="Движок, который чему-то учится">III</a>—<a href="{{ '/ru/css/' | relative_url }}" title="Движок, которому нужен CSS">IV</a>—<a href="{{ '/ru/es2015-gstreamer/' | relative_url }}" title="Движок, который обогнал Chrome">V</a>—<a href="{{ '/ru/dragonfly-shadow-dom/' | relative_url }}" title="Opera Dragonfly и Shadow DOM">VI</a>—<a href="{{ '/ru/storage/' | relative_url }}" title="Движок, который снова научился гуглить">VII</a> · <a href="{{ '/' | relative_url }}" lang="en">English</a> · <strong>Русский</strong>
 </nav>
 
 # Движок, который мы потеряли: цифровая археология Opera Presto
@@ -533,5 +533,5 @@ SSL-стек в Opera, как вы помните, собственный, хо�
 ---
 
 <nav aria-label="Нижняя навигация">
-  <a href="#top">↑ Наверх</a> · <a href="{{ '/ru/revival/' | relative_url }}" rel="next">Дальше: Движок, который мы оживляем →</a> · НЕДЕЛЯ: <strong>I</strong>—<a href="{{ '/ru/revival/' | relative_url }}" title="Движок, который мы оживляем">II</a>—<a href="{{ '/ru/modern/' | relative_url }}" title="Движок, который чему-то учится">III</a>—<a href="{{ '/ru/css/' | relative_url }}" title="Движок, которому нужен CSS">IV</a>—<a href="{{ '/ru/es2015-gstreamer/' | relative_url }}" title="Движок, который обогнал Chrome">V</a>—<a href="{{ '/ru/dragonfly-shadow-dom/' | relative_url }}" title="Opera Dragonfly и Shadow DOM">VI</a> · <a href="{{ '/' | relative_url }}" lang="en">English</a> · <strong>Русский</strong>
+  <a href="#top">↑ Наверх</a> · <a href="{{ '/ru/revival/' | relative_url }}" rel="next">Дальше: Движок, который мы оживляем →</a> · НЕДЕЛЯ: <strong>I</strong>—<a href="{{ '/ru/revival/' | relative_url }}" title="Движок, который мы оживляем">II</a>—<a href="{{ '/ru/modern/' | relative_url }}" title="Движок, который чему-то учится">III</a>—<a href="{{ '/ru/css/' | relative_url }}" title="Движок, которому нужен CSS">IV</a>—<a href="{{ '/ru/es2015-gstreamer/' | relative_url }}" title="Движок, который обогнал Chrome">V</a>—<a href="{{ '/ru/dragonfly-shadow-dom/' | relative_url }}" title="Opera Dragonfly и Shadow DOM">VI</a>—<a href="{{ '/ru/storage/' | relative_url }}" title="Движок, который снова научился гуглить">VII</a> · <a href="{{ '/' | relative_url }}" lang="en">English</a> · <strong>Русский</strong>
 </nav>
