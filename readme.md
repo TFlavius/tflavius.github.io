@@ -99,6 +99,37 @@
 * **[XXX. Мнимая простота](06.opera-presto-dragonfly-shadow-dom.md#xxx-мнимая-простота)**
 * **[XXXI. Что дальше?](06.opera-presto-dragonfly-shadow-dom.md#xxxi-что-дальше)**
 
+### Часть 7. Движок, который снова научился гуглить
+
+[Читать здесь](07.opera-presto-fetch-storage.md) · [читать на сайте](https://tflavius.github.io/ru/fetch-storage/)
+
+* **[XXXII. Fetch для Opera Presto](07.opera-presto-fetch-storage.md#xxxii-fetch-для-opera-presto)**
+  * [XXXII.I Ложная простота Fetch](07.opera-presto-fetch-storage.md#xxxiii-ложная-простота-fetch)
+  * [XXXII.II Вынужденные компромиссы](07.opera-presto-fetch-storage.md#xxxiiii-вынужденные-компромиссы)
+  * [XXXII.III Двадцать первый редирект](07.opera-presto-fetch-storage.md#xxxiiiii-двадцать-первый-редирект)
+  * [XXXII.IV Что теперь умеет Opera?](07.opera-presto-fetch-storage.md#xxxiiiv-что-теперь-умеет-opera)
+* **[XXXIII. Один движок, две СУБД](07.opera-presto-fetch-storage.md#xxxiii-один-движок-две-субд)**
+  * [XXXIII.I Изобретение Search engine](07.opera-presto-fetch-storage.md#xxxiiii-изобретение-search-engine)
+  * [XXXIII.II Зачем SQLite?](07.opera-presto-fetch-storage.md#xxxiiiii-зачем-sqlite)
+  * [XXXIII.III Нет, но всё-таки?](07.opera-presto-fetch-storage.md#xxxiiiiii-нет-но-всё-таки)
+  * [XXXIII.IV Забытая фича](07.opera-presto-fetch-storage.md#xxxiiiiv-забытая-фича)
+* **[XXXIV. Айсберг IndexedDB и судьба Web SQL](07.opera-presto-fetch-storage.md#xxxiv-айсберг-indexeddb-и-судьба-web-sql)**
+* **[XXXV. Что дальше?](07.opera-presto-fetch-storage.md#xxxv-что-дальше)**
+
+### Часть 8. Новый IndexedDB и старая VEGA
+
+[Читать здесь](08.opera-presto-indexeddb-hwaccel.md) · [читать на сайте](https://tflavius.github.io/ru/indexeddb-hwaccel/)
+
+* **[XXXVI. IndexedDB на месте](08.opera-presto-indexeddb-hwaccel.md#xxxvi-indexeddb-на-месте)**
+  * [XXXVI.I IndexedDB в отдельном потоке](08.opera-presto-indexeddb-hwaccel.md#xxxvii-indexeddb-в-отдельном-потоке)
+  * [XXXVI.II Финализируем транзакцию](08.opera-presto-indexeddb-hwaccel.md#xxxviii-финализируем-транзакцию)
+* **[XXXVII. Копаем VEGA](08.opera-presto-indexeddb-hwaccel.md#xxxvii-копаем-vega)**
+  * [XXXVII.I Проблема масштаба](08.opera-presto-indexeddb-hwaccel.md#xxxviii-проблема-масштаба)
+  * [XXXVII.II Буквы, мониторы и прокрутка](08.opera-presto-indexeddb-hwaccel.md#xxxviiii-буквы-мониторы-и-прокрутка)
+  * [XXXVII.III Возвращение аппаратного ускорения](08.opera-presto-indexeddb-hwaccel.md#xxxviiiii-возвращение-аппаратного-ускорения)
+  * [XXXVII.IV Доработки WebGL](08.opera-presto-indexeddb-hwaccel.md#xxxviiiv-доработки-webgl)
+* **[XXXVIII. Что дальше?](08.opera-presto-indexeddb-hwaccel.md#xxxviii-что-дальше)**
+
 ---
 
 ## Contents [EN]
@@ -192,3 +223,34 @@
 * **[XXIX. A History of Shadow DOM, and Why It Exists](06.opera-presto-dragonfly-shadow-dom-en.md#xxix-a-history-of-shadow-dom-and-why-it-exists)**
 * **[XXX. The Illusion of Simplicity](06.opera-presto-dragonfly-shadow-dom-en.md#xxx-the-illusion-of-simplicity)**
 * **[XXXI. What's Next?](06.opera-presto-dragonfly-shadow-dom-en.md#xxxi-whats-next)**
+
+### Part 7. The Engine That Can Google Again
+
+[Read here](07.opera-presto-fetch-storage-en.md) · [read online](https://tflavius.github.io/fetch-storage/)
+
+* **[XXXII. Fetch for Opera Presto](07.opera-presto-fetch-storage-en.md#xxxii-fetch-for-opera-presto)**
+  * [XXXII.I The False Simplicity of Fetch](07.opera-presto-fetch-storage-en.md#xxxiii-the-false-simplicity-of-fetch)
+  * [XXXII.II Compromises I Had to Make](07.opera-presto-fetch-storage-en.md#xxxiiii-compromises-i-had-to-make)
+  * [XXXII.III The Twenty-First Redirect](07.opera-presto-fetch-storage-en.md#xxxiiiii-the-twenty-first-redirect)
+  * [XXXII.IV What Can Opera Do Now?](07.opera-presto-fetch-storage-en.md#xxxiiiv-what-can-opera-do-now)
+* **[XXXIII. One Engine, Two Databases](07.opera-presto-fetch-storage-en.md#xxxiii-one-engine-two-databases)**
+  * [XXXIII.I The Invention of Search engine](07.opera-presto-fetch-storage-en.md#xxxiiii-the-invention-of-search-engine)
+  * [XXXIII.II Why SQLite?](07.opera-presto-fetch-storage-en.md#xxxiiiii-why-sqlite)
+  * [XXXIII.III Yes, But Why Keep Both?](07.opera-presto-fetch-storage-en.md#xxxiiiiii-yes-but-why-keep-both)
+  * [XXXIII.IV The Forgotten Feature](07.opera-presto-fetch-storage-en.md#xxxiiiiv-the-forgotten-feature)
+* **[XXXIV. The IndexedDB Iceberg and the Fate of Web SQL](07.opera-presto-fetch-storage-en.md#xxxiv-the-indexeddb-iceberg-and-the-fate-of-web-sql)**
+* **[XXXV. What's Next?](07.opera-presto-fetch-storage-en.md#xxxv-whats-next)**
+
+### Part 8. The New IndexedDB and the Old VEGA
+
+[Read here](08.opera-presto-indexeddb-hwaccel-en.md) · [read online](https://tflavius.github.io/indexeddb-hwaccel/)
+
+* **[XXXVI. IndexedDB Is in Place](08.opera-presto-indexeddb-hwaccel-en.md#xxxvi-indexeddb-is-in-place)**
+  * [XXXVI.I IndexedDB on Its Own Thread](08.opera-presto-indexeddb-hwaccel-en.md#xxxvii-indexeddb-on-its-own-thread)
+  * [XXXVI.II Finalizing the Transaction](08.opera-presto-indexeddb-hwaccel-en.md#xxxviii-finalizing-the-transaction)
+* **[XXXVII. Digging into VEGA](08.opera-presto-indexeddb-hwaccel-en.md#xxxvii-digging-into-vega)**
+  * [XXXVII.I A Problem of Scale](08.opera-presto-indexeddb-hwaccel-en.md#xxxviii-a-problem-of-scale)
+  * [XXXVII.II Letters, Monitors, and Scrolling](08.opera-presto-indexeddb-hwaccel-en.md#xxxviiii-letters-monitors-and-scrolling)
+  * [XXXVII.III The Return of Hardware Acceleration](08.opera-presto-indexeddb-hwaccel-en.md#xxxviiiii-the-return-of-hardware-acceleration)
+  * [XXXVII.IV Fixing Up WebGL](08.opera-presto-indexeddb-hwaccel-en.md#xxxviiiv-fixing-up-webgl)
+* **[XXXVIII. What's Next?](08.opera-presto-indexeddb-hwaccel-en.md#xxxviii-whats-next)**
