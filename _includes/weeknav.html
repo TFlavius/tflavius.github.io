@@ -1,0 +1,44 @@
+{%- assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," -%}
+{%- assign parts = site.pages | where_exp: "p", "p.lang == page.lang" | sort: "path" -%}
+{%- assign cur = 0 -%}
+{%- for p in parts -%}{%- if p.url == page.url -%}{%- assign cur = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- if page.lang == "ru" -%}
+{%- assign s_top = "Верхняя навигация" -%}
+{%- assign s_bot = "Нижняя навигация" -%}
+{%- assign s_week = "НЕДЕЛЯ" -%}
+{%- assign s_prev = "Назад" -%}
+{%- assign s_next = "Дальше" -%}
+{%- assign s_up = "Наверх" -%}
+{%- assign other_url = page.url | remove_first: "/ru" -%}
+{%- if other_url == "" -%}{%- assign other_url = "/" -%}{%- endif -%}
+{%- capture lang_toggle -%}<a href="{{ other_url | relative_url }}" lang="en">English</a> · <strong>Русский</strong>{%- endcapture -%}
+{%- else -%}
+{%- assign s_top = "Top navigation" -%}
+{%- assign s_bot = "Bottom navigation" -%}
+{%- assign s_week = "WEEK" -%}
+{%- assign s_prev = "Previous" -%}
+{%- assign s_next = "Next" -%}
+{%- assign s_up = "Back to top" -%}
+{%- assign other_url = "/ru" | append: page.url -%}
+{%- capture lang_toggle -%}<strong>English</strong> · <a href="{{ other_url | relative_url }}" lang="ru">Русский</a>{%- endcapture -%}
+{%- endif -%}
+{%- capture week -%}
+{%- for p in parts -%}
+{%- assign short = p.title | split: ":" | first -%}
+{%- if forloop.index0 == cur -%}<strong>{{ romans[forloop.index0] }}</strong>
+{%- else -%}<a href="{{ p.url | relative_url }}" title="{{ short }}">{{ romans[forloop.index0] }}</a>
+{%- endif -%}
+{%- unless forloop.last -%}—{%- endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- if include.pos == "top" -%}
+<nav id="top" aria-label="{{ s_top }}" style="display: flex; flex-wrap: wrap; gap: 0.35em 0.75em;">
+  <span>{% if cur > 0 %}{% assign pi = cur | minus: 1 %}{% assign pp = parts[pi] %}{% assign ps = pp.title | split: ":" | first %}<a href="{{ pp.url | relative_url }}" rel="prev">← {{ s_prev }}: {{ ps }}</a> · {% endif %}{{ s_week }}: {{ week }}</span>
+  <span style="margin-left: auto;">{{ lang_toggle }}</span>
+</nav>
+{%- else -%}
+{%- assign ni = cur | plus: 1 -%}
+<nav aria-label="{{ s_bot }}" style="display: flex; flex-wrap: wrap; gap: 0.35em 0.75em;">
+  <span><a href="#top">↑ {{ s_up }}</a>{% if ni < parts.size %}{% assign np = parts[ni] %}{% assign ns = np.title | split: ":" | first %} · <a href="{{ np.url | relative_url }}" rel="next">{{ s_next }}: {{ ns }} →</a>{% endif %} · {{ s_week }}: {{ week }}</span>
+</nav>
+{%- endif -%}
