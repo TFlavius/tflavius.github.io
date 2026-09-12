@@ -130,6 +130,19 @@
   * [XXXVII.IV Доработки WebGL](08.opera-presto-indexeddb-hwaccel.md#xxxviiiv-доработки-webgl)
 * **[XXXVIII. Что дальше?](08.opera-presto-indexeddb-hwaccel.md#xxxviii-что-дальше)**
 
+### Часть 9. Запутанная история с несколькими стеками
+
+[Читать здесь](09.opera-presto-pseudothread.md) · [читать на сайте](https://tflavius.github.io/ru/pseudothread/)
+
+* **[XXXIX. Ничего нового](09.opera-presto-pseudothread.md#xxxix-ничего-нового)**
+* **[XL. Однопоточная многопоточность](09.opera-presto-pseudothread.md#xl-однопоточная-многопоточность)**
+* **[XLI. Ловля неуловимого Джо](09.opera-presto-pseudothread.md#xli-ловля-неуловимого-джо)**
+* **[XLII. Что пошло не так?](09.opera-presto-pseudothread.md#xlii-что-пошло-не-так)**
+* **[XLIII. Утерянная мудрость предков](09.opera-presto-pseudothread.md#xliii-утерянная-мудрость-предков)**
+* **[XLIV. Подводные камни](09.opera-presto-pseudothread.md#xliv-подводные-камни)**
+* **[XLV. Немного системной поточности](09.opera-presto-pseudothread.md#xlv-немного-системной-поточности)**
+* **[XLVI. Что дальше?](09.opera-presto-pseudothread.md#xlvi-что-дальше)**
+
 ---
 
 ## Contents [EN]
@@ -254,3 +267,16 @@
   * [XXXVII.III The Return of Hardware Acceleration](08.opera-presto-indexeddb-hwaccel-en.md#xxxviiiii-the-return-of-hardware-acceleration)
   * [XXXVII.IV Fixing Up WebGL](08.opera-presto-indexeddb-hwaccel-en.md#xxxviiiv-fixing-up-webgl)
 * **[XXXVIII. What's Next?](08.opera-presto-indexeddb-hwaccel-en.md#xxxviii-whats-next)**
+
+### Part 9. A Tangled Tale of Several Stacks
+
+[Read here](09.opera-presto-pseudothread-en.md) · [read online](https://tflavius.github.io/pseudothread/)
+
+* **[XXXIX. Nothing New](09.opera-presto-pseudothread-en.md#xxxix-nothing-new)**
+* **[XL. Single-Threaded Multithreading](09.opera-presto-pseudothread-en.md#xl-single-threaded-multithreading)**
+* **[XLI. Catch Me If You Can](09.opera-presto-pseudothread-en.md#xli-catch-me-if-you-can)**
+* **[XLII. What Went Wrong?](09.opera-presto-pseudothread-en.md#xlii-what-went-wrong)**
+* **[XLIII. The Lost Wisdom of the Ancients](09.opera-presto-pseudothread-en.md#xliii-the-lost-wisdom-of-the-ancients)**
+* **[XLIV. Pitfalls](09.opera-presto-pseudothread-en.md#xliv-pitfalls)**
+* **[XLV. A Bit of System Threading](09.opera-presto-pseudothread-en.md#xlv-a-bit-of-system-threading)**
+* **[XLVI. What's Next?](09.opera-presto-pseudothread-en.md#xlvi-whats-next)**
