@@ -143,6 +143,25 @@
 * **[XLV. Немного системной поточности](09.opera-presto-pseudothread.md#xlv-немного-системной-поточности)**
 * **[XLVI. Что дальше?](09.opera-presto-pseudothread.md#xlvi-что-дальше)**
 
+### Часть 10. Мы пилили Carakan: часть первая
+
+[Читать здесь](10.opera-presto-es2026-p1.md) · [читать на сайте](https://tflavius.github.io/ru/es2026-p1/)
+
+* **[XLVII. Очень много нового!](10.opera-presto-es2026-p1.md#xlvii-очень-много-нового)**
+* **[XLVIII. Что такое Test262](10.opera-presto-es2026-p1.md#xlviii-что-такое-test262)**
+  * [XLVIII.I Как Test262 прикручен к Carakan](10.opera-presto-es2026-p1.md#xlviiii-как-test262-прикручен-к-carakan)
+  * [XLVIII.II Тридцать тоскливых часов](10.opera-presto-es2026-p1.md#xlviiiii-тридцать-тоскливых-часов)
+  * [XLVIII.III Что в итоге](10.opera-presto-es2026-p1.md#xlviiiiii-что-в-итоге)
+* **[XLIX. Большой, целый, необрезанный](10.opera-presto-es2026-p1.md#xlix-большой-целый-необрезанный)**
+  * [XLIX.I Зачем нужен новый тип?](10.opera-presto-es2026-p1.md#xlixi-зачем-нужен-новый-тип)
+  * [XLIX.II Впихнуть невпихуемое](10.opera-presto-es2026-p1.md#xlixii-впихнуть-невпихуемое)
+* **[L. Трудности перевода](10.opera-presto-es2026-p1.md#l-трудности-перевода)**
+  * [L.I Откуда берутся правила локалей?](10.opera-presto-es2026-p1.md#li-откуда-берутся-правила-локалей)
+  * [L.II Интеграция ICU](10.opera-presto-es2026-p1.md#lii-интеграция-icu)
+  * [L.III Память на случай нехватки памяти](10.opera-presto-es2026-p1.md#liii-память-на-случай-нехватки-памяти)
+  * [L.IV Слишком жирно, попробуйте ещё раз](10.opera-presto-es2026-p1.md#liv-слишком-жирно-попробуйте-ещё-раз)
+* **[LI. Что дальше?](10.opera-presto-es2026-p1.md#li-что-дальше)**
+
 ---
 
 ## Contents [EN]
@@ -280,3 +299,22 @@
 * **[XLIV. Pitfalls](09.opera-presto-pseudothread-en.md#xliv-pitfalls)**
 * **[XLV. A Bit of System Threading](09.opera-presto-pseudothread-en.md#xlv-a-bit-of-system-threading)**
 * **[XLVI. What's Next?](09.opera-presto-pseudothread-en.md#xlvi-whats-next)**
+
+### Part 10. We Took Carakan: Part One
+
+[Read here](10.opera-presto-es2026-p1-en.md) · [read online](https://tflavius.github.io/es2026-p1/)
+
+* **[XLVII. A Whole Lot of New!](10.opera-presto-es2026-p1-en.md#xlvii-a-whole-lot-of-new)**
+* **[XLVIII. What Test262 Is](10.opera-presto-es2026-p1-en.md#xlviii-what-test262-is)**
+  * [XLVIII.I How Test262 Is Bolted Onto Carakan](10.opera-presto-es2026-p1-en.md#xlviiii-how-test262-is-bolted-onto-carakan)
+  * [XLVIII.II Thirty Dreary Hours](10.opera-presto-es2026-p1-en.md#xlviiiii-thirty-dreary-hours)
+  * [XLVIII.III Where That Leaves Us](10.opera-presto-es2026-p1-en.md#xlviiiiii-where-that-leaves-us)
+* **[XLIX. Big, Whole and Uncut](10.opera-presto-es2026-p1-en.md#xlix-big-whole-and-uncut)**
+  * [XLIX.I Why a New Type?](10.opera-presto-es2026-p1-en.md#xlixi-why-a-new-type)
+  * [XLIX.II Cramming In the Uncrammable](10.opera-presto-es2026-p1-en.md#xlixii-cramming-in-the-uncrammable)
+* **[L. Lost in Translation](10.opera-presto-es2026-p1-en.md#l-lost-in-translation)**
+  * [L.I Where Do Locale Rules Come From?](10.opera-presto-es2026-p1-en.md#li-where-do-locale-rules-come-from)
+  * [L.II Integrating ICU](10.opera-presto-es2026-p1-en.md#lii-integrating-icu)
+  * [L.III Memory for When There Is No Memory](10.opera-presto-es2026-p1-en.md#liii-memory-for-when-there-is-no-memory)
+  * [L.IV Too Fat, Try Again](10.opera-presto-es2026-p1-en.md#liv-too-fat-try-again)
+* **[LI. What's Next?](10.opera-presto-es2026-p1-en.md#li-whats-next)**
