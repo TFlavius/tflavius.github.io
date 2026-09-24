@@ -162,6 +162,35 @@
   * [L.IV Слишком жирно, попробуйте ещё раз](10.opera-presto-es2026-p1.md#liv-слишком-жирно-попробуйте-ещё-раз)
 * **[LI. Что дальше?](10.opera-presto-es2026-p1.md#li-что-дальше)**
 
+### Часть 11. Мы пилили Carakan: часть вторая
+
+[Читать здесь](11.opera-presto-es2026-p2.md) · [читать на сайте](https://tflavius.github.io/ru/es2026-p2/)
+
+* **[LII. Регулярная эволюция](11.opera-presto-es2026-p2.md#lii-регулярная-эволюция)**
+  * [LII.I RegExp в Opera 12](11.opera-presto-es2026-p2.md#liii-regexp-в-opera-12)
+  * [LII.II Маленькая машина для маленького языка](11.opera-presto-es2026-p2.md#liiii-маленькая-машина-для-маленького-языка)
+  * [LII.III Как исполняется регулярка](11.opera-presto-es2026-p2.md#liiiii-как-исполняется-регулярка)
+  * [LII.IV Эволюция RegExp](11.opera-presto-es2026-p2.md#liiiv-эволюция-regexp)
+  * [LII.V Не делите 💩 пополам](11.opera-presto-es2026-p2.md#liiv-не-делите--пополам)
+  * [LII.VI Наследство предков](11.opera-presto-es2026-p2.md#liivi-наследство-предков)
+  * [LII.VII Как посмотреть обратно?](11.opera-presto-es2026-p2.md#liivii-как-посмотреть-обратно)
+  * [LII.VIII Строки внутри классов](11.opera-presto-es2026-p2.md#liiviii-строки-внутри-классов)
+  * [LII.IX Что стало с JIT](11.opera-presto-es2026-p2.md#liiix-что-стало-с-jit)
+  * [LII.X Экспоненциальная ловушка](11.opera-presto-es2026-p2.md#liix-экспоненциальная-ловушка)
+* **[LIII. Слабые ссылки и финализация](11.opera-presto-es2026-p2.md#liii-слабые-ссылки-и-финализация)**
+  * [LIII.I Что делает `WeakRef`](11.opera-presto-es2026-p2.md#liiii-что-делает-weakref)
+  * [LIII.II Одна ячейка на двоих](11.opera-presto-es2026-p2.md#liiiii-одна-ячейка-на-двоих)
+  * [LIII.III Что делает `FinalizationRegistry`](11.opera-presto-es2026-p2.md#liiiiii-что-делает-finalizationregistry)
+  * [LIII.IV От сборщика к callback](11.opera-presto-es2026-p2.md#liiiiv-от-сборщика-к-callback)
+* **[LIV. Общая память и атомики](11.opera-presto-es2026-p2.md#liv-общая-память-и-атомики)**
+  * [LIV.I Наши общие байты](11.opera-presto-es2026-p2.md#livi-наши-общие-байты)
+  * [LIV.II От `ArrayBuffer` к backing store](11.opera-presto-es2026-p2.md#livii-от-arraybuffer-к-backing-store)
+  * [LIV.III Есть два стула](11.opera-presto-es2026-p2.md#liviii-есть-два-стула)
+  * [LIV.IV Что такое `Atomics`](11.opera-presto-es2026-p2.md#liviv-что-такое-atomics)
+* **[LV. Много наших полегло](11.opera-presto-es2026-p2.md#lv-много-наших-полегло)**
+  * [LV.I Что ещё изменилось между ES2015 и ES2026](11.opera-presto-es2026-p2.md#lvi-что-ещё-изменилось-между-es2015-и-es2026)
+* **[LVI. Где мы сейчас и что дальше?](11.opera-presto-es2026-p2.md#lvi-где-мы-сейчас-и-что-дальше)**
+
 ---
 
 ## Contents [EN]
@@ -318,3 +347,32 @@
   * [L.III Memory for When There Is No Memory](10.opera-presto-es2026-p1-en.md#liii-memory-for-when-there-is-no-memory)
   * [L.IV Too Fat, Try Again](10.opera-presto-es2026-p1-en.md#liv-too-fat-try-again)
 * **[LI. What's Next?](10.opera-presto-es2026-p1-en.md#li-whats-next)**
+
+### Part 11. We Took Carakan: Part Two
+
+[Read here](11.opera-presto-es2026-p2-en.md) · [read online](https://tflavius.github.io/es2026-p2/)
+
+* **[LII. Regular Evolution](11.opera-presto-es2026-p2-en.md#lii-regular-evolution)**
+  * [LII.I RegExp in Opera 12](11.opera-presto-es2026-p2-en.md#liii-regexp-in-opera-12)
+  * [LII.II A Little Machine for a Little Language](11.opera-presto-es2026-p2-en.md#liiii-a-little-machine-for-a-little-language)
+  * [LII.III How a Regex Runs](11.opera-presto-es2026-p2-en.md#liiiii-how-a-regex-runs)
+  * [LII.IV The Evolution of RegExp](11.opera-presto-es2026-p2-en.md#liiiv-the-evolution-of-regexp)
+  * [LII.V Don't Split the 💩 in Half](11.opera-presto-es2026-p2-en.md#liiv-dont-split-the--in-half)
+  * [LII.VI The Legacy of the Ancients](11.opera-presto-es2026-p2-en.md#liivi-the-legacy-of-the-ancients)
+  * [LII.VII How Do You Look Back?](11.opera-presto-es2026-p2-en.md#liivii-how-do-you-look-back)
+  * [LII.VIII Strings Inside Classes](11.opera-presto-es2026-p2-en.md#liiviii-strings-inside-classes)
+  * [LII.IX What Became of the JIT](11.opera-presto-es2026-p2-en.md#liiix-what-became-of-the-jit)
+  * [LII.X The Exponential Trap](11.opera-presto-es2026-p2-en.md#liix-the-exponential-trap)
+* **[LIII. Weak References and Finalization](11.opera-presto-es2026-p2-en.md#liii-weak-references-and-finalization)**
+  * [LIII.I What `WeakRef` Does](11.opera-presto-es2026-p2-en.md#liiii-what-weakref-does)
+  * [LIII.II One Cell for Two](11.opera-presto-es2026-p2-en.md#liiiii-one-cell-for-two)
+  * [LIII.III What `FinalizationRegistry` Does](11.opera-presto-es2026-p2-en.md#liiiiii-what-finalizationregistry-does)
+  * [LIII.IV From the Collector to the Callback](11.opera-presto-es2026-p2-en.md#liiiiv-from-the-collector-to-the-callback)
+* **[LIV. Shared Memory and Atomics](11.opera-presto-es2026-p2-en.md#liv-shared-memory-and-atomics)**
+  * [LIV.I Our Shared Bytes](11.opera-presto-es2026-p2-en.md#livi-our-shared-bytes)
+  * [LIV.II From `ArrayBuffer` to Backing Store](11.opera-presto-es2026-p2-en.md#livii-from-arraybuffer-to-backing-store)
+  * [LIV.III Point of No Return](11.opera-presto-es2026-p2-en.md#liviii-point-of-no-return)
+  * [LIV.IV What `Atomics` Is](11.opera-presto-es2026-p2-en.md#liviv-what-atomics-is)
+* **[LV. Losses Were Heavy](11.opera-presto-es2026-p2-en.md#lv-losses-were-heavy)**
+  * [LV.I What Else Changed Between ES2015 and ES2026](11.opera-presto-es2026-p2-en.md#lvi-what-else-changed-between-es2015-and-es2026)
+* **[LVI. Where We Are Now and What's Next?](11.opera-presto-es2026-p2-en.md#lvi-where-we-are-now-and-whats-next)**

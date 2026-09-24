@@ -11,7 +11,12 @@
 {%- assign s_up = "Наверх" -%}
 {%- assign other_url = page.url | remove_first: "/ru" -%}
 {%- if other_url == "" -%}{%- assign other_url = "/" -%}{%- endif -%}
+{%- assign twin = site.pages | where: "url", other_url | first -%}
+{%- if twin -%}
 {%- capture lang_toggle -%}<a href="{{ other_url | relative_url }}" lang="en">English</a> · <strong>Русский</strong>{%- endcapture -%}
+{%- else -%}
+{%- capture lang_toggle -%}<strong>Русский</strong>{%- endcapture -%}
+{%- endif -%}
 {%- else -%}
 {%- assign s_top = "Top navigation" -%}
 {%- assign s_bot = "Bottom navigation" -%}
@@ -20,7 +25,12 @@
 {%- assign s_next = "Next" -%}
 {%- assign s_up = "Back to top" -%}
 {%- assign other_url = "/ru" | append: page.url -%}
+{%- assign twin = site.pages | where: "url", other_url | first -%}
+{%- if twin -%}
 {%- capture lang_toggle -%}<strong>English</strong> · <a href="{{ other_url | relative_url }}" lang="ru">Русский</a>{%- endcapture -%}
+{%- else -%}
+{%- capture lang_toggle -%}<strong>English</strong>{%- endcapture -%}
+{%- endif -%}
 {%- endif -%}
 {%- capture week -%}
 {%- for p in parts -%}
