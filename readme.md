@@ -191,6 +191,10 @@
   * [LV.I Что ещё изменилось между ES2015 и ES2026](11.opera-presto-es2026-p2.md#lvi-что-ещё-изменилось-между-es2015-и-es2026)
 * **[LVI. Где мы сейчас и что дальше?](11.opera-presto-es2026-p2.md#lvi-где-мы-сейчас-и-что-дальше)**
 
+### Часть 12. Точка останова
+
+[Read here](12.opera-presto-otium.md) · [read online](https://tflavius.github.io/ru/otium/)
+
 ---
 
 ## Contents [EN]
@@ -376,3 +380,7 @@
 * **[LV. Losses Were Heavy](11.opera-presto-es2026-p2-en.md#lv-losses-were-heavy)**
   * [LV.I What Else Changed Between ES2015 and ES2026](11.opera-presto-es2026-p2-en.md#lvi-what-else-changed-between-es2015-and-es2026)
 * **[LVI. Where We Are Now and What's Next?](11.opera-presto-es2026-p2-en.md#lvi-where-we-are-now-and-whats-next)**
+
+### Part 12. The breakpoint
+
+[Read here](12.opera-presto-otium-en.md) · [read online](https://tflavius.github.io/otium/)
