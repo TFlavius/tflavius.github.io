@@ -193,7 +193,7 @@
 
 ### Часть 12. Точка останова
 
-[Read here](12.opera-presto-otium.md) · [read online](https://tflavius.github.io/ru/otium/)
+[Читать здесь](12.opera-presto-otium.md) · [читать на сайте](https://tflavius.github.io/ru/otium/)
 
 ---
 
@@ -381,6 +381,6 @@
   * [LV.I What Else Changed Between ES2015 and ES2026](11.opera-presto-es2026-p2-en.md#lvi-what-else-changed-between-es2015-and-es2026)
 * **[LVI. Where We Are Now and What's Next?](11.opera-presto-es2026-p2-en.md#lvi-where-we-are-now-and-whats-next)**
 
-### Part 12. The breakpoint
+### Part 12. The Breakpoint
 
 [Read here](12.opera-presto-otium-en.md) · [read online](https://tflavius.github.io/otium/)
