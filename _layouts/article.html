@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
+{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII" | split: "," %}
 {% assign parts = site.pages | where_exp: "p", "p.lang == page.lang" | sort: "path" %}
 {% if page.lang == "ru" %}
   {% assign s_label = "Навигация по серии" %}
