@@ -203,19 +203,19 @@
   * [LVII.I Как достичь асинхронности](13.opera-presto-web-crypto-es2026-p3.md#lviii-как-достичь-асинхронности)
   * [LVII.II Остановка по требованию](13.opera-presto-web-crypto-es2026-p3.md#lviiii-остановка-по-требованию)
   * [LVII.III Архитектурные компромиссы](13.opera-presto-web-crypto-es2026-p3.md#lviiiii-архитектурные-компромиссы)
-* **[LVIII. Как разобрать ключ, не привлекая внимания санитаров](13.opera-presto-web-crypto-es2026-p3.md#lviii-как-разобрать-ключ-не-привлекая-внимания-санитаров)**
-  * [LVIII.I Web Crypto API готов (почти)](13.opera-presto-web-crypto-es2026-p3.md#lviiii-web-crypto-api-готов-почти)
-* **[LIX. Мы (всё ещё) пилим Carakan](13.opera-presto-web-crypto-es2026-p3.md#lix-мы-всё-ещё-пилим-carakan)**
-  * [LIX.I Чем мерить попугаев](13.opera-presto-web-crypto-es2026-p3.md#lixi-чем-мерить-попугаев)
-  * [LIX.II Кто на свете всех быстрее](13.opera-presto-web-crypto-es2026-p3.md#lixii-кто-на-свете-всех-быстрее)
-* **[LX. Снимаем JS с ручника](13.opera-presto-web-crypto-es2026-p3.md#lx-снимаем-js-с-ручника)**
-  * [LX.I Некеширующий кеш](13.opera-presto-web-crypto-es2026-p3.md#lxi-некеширующий-кеш)
-  * [LX.II Проблема с хвостами](13.opera-presto-web-crypto-es2026-p3.md#lxii-проблема-с-хвостами)
-  * [LX.III Прыг-скок](13.opera-presto-web-crypto-es2026-p3.md#lxiii-прыг-скок)
-  * [LX.IV Синус больше единицы (в мирное время)](13.opera-presto-web-crypto-es2026-p3.md#lxiv-синус-больше-единицы-в-мирное-время)
-  * [LX.V Минус на минус не всегда даёт плюс](13.opera-presto-web-crypto-es2026-p3.md#lxv-минус-на-минус-не-всегда-даёт-плюс)
-  * [LX.VI Carakan разгоняется (медленно)](13.opera-presto-web-crypto-es2026-p3.md#lxvi-carakan-разгоняется-медленно)
-* **[LXI. Что дальше?](13.opera-presto-web-crypto-es2026-p3.md#lxi-что-дальше)**
+  * [LVII.IV Как разобрать ключ, не привлекая внимания санитаров](13.opera-presto-web-crypto-es2026-p3.md#lviiiv-как-разобрать-ключ-не-привлекая-внимания-санитаров)
+  * [LVII.V Web Crypto API готов (почти)](13.opera-presto-web-crypto-es2026-p3.md#lviiv-web-crypto-api-готов-почти)
+* **[LVIII. Мы (всё ещё) пилим Carakan](13.opera-presto-web-crypto-es2026-p3.md#lviii-мы-всё-ещё-пилим-carakan)**
+  * [LVIII.I Чем мерить попугаев](13.opera-presto-web-crypto-es2026-p3.md#lviiii-чем-мерить-попугаев)
+  * [LVIII.II Кто на свете всех быстрее](13.opera-presto-web-crypto-es2026-p3.md#lviiiii-кто-на-свете-всех-быстрее)
+  * [LVIII.III Снимаем JS с ручника](13.opera-presto-web-crypto-es2026-p3.md#lviiiiii-снимаем-js-с-ручника)
+  * [LVIII.IV Некеширующий кеш](13.opera-presto-web-crypto-es2026-p3.md#lviiiiv-некеширующий-кеш)
+  * [LVIII.V Проблема с хвостами](13.opera-presto-web-crypto-es2026-p3.md#lviiiv-проблема-с-хвостами)
+  * [LVIII.VI Прыг-скок](13.opera-presto-web-crypto-es2026-p3.md#lviiivi-прыг-скок)
+  * [LVIII.VII Синус больше единицы (в мирное время)](13.opera-presto-web-crypto-es2026-p3.md#lviiivii-синус-больше-единицы-в-мирное-время)
+  * [LVIII.VIII Минус на минус не всегда даёт плюс](13.opera-presto-web-crypto-es2026-p3.md#lviiiviii-минус-на-минус-не-всегда-даёт-плюс)
+  * [LVIII.IX Carakan разгоняется (медленно)](13.opera-presto-web-crypto-es2026-p3.md#lviiiix-carakan-разгоняется-медленно)
+* **[LIX. Что дальше?](13.opera-presto-web-crypto-es2026-p3.md#lix-что-дальше)**
 
 ---
 
@@ -415,16 +415,16 @@
   * [LVII.I Making It Asynchronous](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-making-it-asynchronous)
   * [LVII.II Stopping on Demand](13.opera-presto-web-crypto-es2026-p3-en.md#lviiii-stopping-on-demand)
   * [LVII.III Architectural Trade-offs](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiii-architectural-trade-offs)
-* **[LVIII. How to Parse a Key and Stay Sane](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-how-to-parse-a-key-and-stay-sane)**
-  * [LVIII.I The Web Crypto API Is Ready (Almost)](13.opera-presto-web-crypto-es2026-p3-en.md#lviiii-the-web-crypto-api-is-ready-almost)
-* **[LIX. Still Hacking Away at Carakan](13.opera-presto-web-crypto-es2026-p3-en.md#lix-still-hacking-away-at-carakan)**
-  * [LIX.I Choosing a Yardstick](13.opera-presto-web-crypto-es2026-p3-en.md#lixi-choosing-a-yardstick)
-  * [LIX.II Who's the Fastest of Them All?](13.opera-presto-web-crypto-es2026-p3-en.md#lixii-whos-the-fastest-of-them-all)
-* **[LX. Releasing the Handbrake on JS](13.opera-presto-web-crypto-es2026-p3-en.md#lx-releasing-the-handbrake-on-js)**
-  * [LX.I The Cache That Didn't Cache](13.opera-presto-web-crypto-es2026-p3-en.md#lxi-the-cache-that-didnt-cache)
-  * [LX.II Trouble with Tails](13.opera-presto-web-crypto-es2026-p3-en.md#lxii-trouble-with-tails)
-  * [LX.III Jumping Back and Forth](13.opera-presto-web-crypto-es2026-p3-en.md#lxiii-jumping-back-and-forth)
-  * [LX.IV A Sine Greater Than One](13.opera-presto-web-crypto-es2026-p3-en.md#lxiv-a-sine-greater-than-one)
-  * [LX.V Minus Times Minus Isn't Always Plus](13.opera-presto-web-crypto-es2026-p3-en.md#lxv-minus-times-minus-isnt-always-plus)
-  * [LX.VI Carakan Picks Up Speed (Slowly)](13.opera-presto-web-crypto-es2026-p3-en.md#lxvi-carakan-picks-up-speed-slowly)
-* **[LXI. What's Next?](13.opera-presto-web-crypto-es2026-p3-en.md#lxi-whats-next)**
+  * [LVII.IV How to Parse a Key and Stay Sane](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiv-how-to-parse-a-key-and-stay-sane)
+  * [LVII.V The Web Crypto API Is Ready (Almost)](13.opera-presto-web-crypto-es2026-p3-en.md#lviiv-the-web-crypto-api-is-ready-almost)
+* **[LVIII. We're (Still) Taking Carakan](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-were-still-taking-carakan)**
+  * [LVIII.I Choosing a Yardstick](13.opera-presto-web-crypto-es2026-p3-en.md#lviiii-choosing-a-yardstick)
+  * [LVIII.II Who's the Fastest of Them All?](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiii-whos-the-fastest-of-them-all)
+  * [LVIII.III Releasing the Handbrake on JS](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiiii-releasing-the-handbrake-on-js)
+  * [LVIII.IV The Cache That Didn't Cache](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiiv-the-cache-that-didnt-cache)
+  * [LVIII.V Trouble with Tails](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiv-trouble-with-tails)
+  * [LVIII.VI Jumping Back and Forth](13.opera-presto-web-crypto-es2026-p3-en.md#lviiivi-jumping-back-and-forth)
+  * [LVIII.VII A Sine Greater Than One](13.opera-presto-web-crypto-es2026-p3-en.md#lviiivii-a-sine-greater-than-one)
+  * [LVIII.VIII Minus Times Minus Isn't Always Plus](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiviii-minus-times-minus-isnt-always-plus)
+  * [LVIII.IX Carakan Picks Up Speed (Slowly)](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiix-carakan-picks-up-speed-slowly)
+* **[LIX. What's Next?](13.opera-presto-web-crypto-es2026-p3-en.md#lix-whats-next)**
