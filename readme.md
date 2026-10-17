@@ -415,16 +415,16 @@
   * [LVII.I Making It Asynchronous](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-making-it-asynchronous)
   * [LVII.II Stopping on Demand](13.opera-presto-web-crypto-es2026-p3-en.md#lviiii-stopping-on-demand)
   * [LVII.III Architectural Trade-offs](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiii-architectural-trade-offs)
-* **[LVIII. How to Parse a Key Without Alerting the Orderlies](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-how-to-parse-a-key-without-alerting-the-orderlies)**
+* **[LVIII. How to Parse a Key and Stay Sane](13.opera-presto-web-crypto-es2026-p3-en.md#lviii-how-to-parse-a-key-and-stay-sane)**
   * [LVIII.I The Web Crypto API Is Ready (Almost)](13.opera-presto-web-crypto-es2026-p3-en.md#lviiii-the-web-crypto-api-is-ready-almost)
-* **[LIX. We're (Still) Taking Carakan](13.opera-presto-web-crypto-es2026-p3-en.md#lix-were-still-taking-carakan)**
+* **[LIX. Still Hacking Away at Carakan](13.opera-presto-web-crypto-es2026-p3-en.md#lix-still-hacking-away-at-carakan)**
   * [LIX.I Choosing a Yardstick](13.opera-presto-web-crypto-es2026-p3-en.md#lixi-choosing-a-yardstick)
   * [LIX.II Who's the Fastest of Them All?](13.opera-presto-web-crypto-es2026-p3-en.md#lixii-whos-the-fastest-of-them-all)
 * **[LX. Releasing the Handbrake on JS](13.opera-presto-web-crypto-es2026-p3-en.md#lx-releasing-the-handbrake-on-js)**
   * [LX.I The Cache That Didn't Cache](13.opera-presto-web-crypto-es2026-p3-en.md#lxi-the-cache-that-didnt-cache)
   * [LX.II Trouble with Tails](13.opera-presto-web-crypto-es2026-p3-en.md#lxii-trouble-with-tails)
-  * [LX.III Hop, Skip and Back](13.opera-presto-web-crypto-es2026-p3-en.md#lxiii-hop-skip-and-back)
-  * [LX.IV A Sine Greater Than One (in Peacetime)](13.opera-presto-web-crypto-es2026-p3-en.md#lxiv-a-sine-greater-than-one-in-peacetime)
+  * [LX.III Jumping Back and Forth](13.opera-presto-web-crypto-es2026-p3-en.md#lxiii-jumping-back-and-forth)
+  * [LX.IV A Sine Greater Than One](13.opera-presto-web-crypto-es2026-p3-en.md#lxiv-a-sine-greater-than-one)
   * [LX.V Minus Times Minus Isn't Always Plus](13.opera-presto-web-crypto-es2026-p3-en.md#lxv-minus-times-minus-isnt-always-plus)
   * [LX.VI Carakan Picks Up Speed (Slowly)](13.opera-presto-web-crypto-es2026-p3-en.md#lxvi-carakan-picks-up-speed-slowly)
 * **[LXI. What's Next?](13.opera-presto-web-crypto-es2026-p3-en.md#lxi-whats-next)**
