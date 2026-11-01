@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="647" height="307" viewBox="0 0 647 307" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Бэкенды VEGA</title>
+<desc>Страница, SVG, canvas и интерфейс Opera рисуются через VEGA. У неё два пути: программный растеризатор, выдающий пиксели в оперативной памяти, и 3D-бэкенд поверх общего интерфейса графического устройства с реализациями Direct3D 10.1 и OpenGL.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="647" height="307" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="170.1" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="105.1" y="37.1" font-size="13" fill="#1f2328" text-anchor="middle">Страница, SVG, canvas,</text>
+<text x="105.1" y="55.0" font-size="13" fill="#1f2328" text-anchor="middle">интерфейс Opera</text>
+<rect x="71.8" y="97.9" width="66.6" height="36.7" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="105.1" y="121.0" font-size="15" fill="#1f2328" font-weight="600" text-anchor="middle">VEGA</text>
+<path d="M105.1,67.9 V96.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="155.1" y="157.6" width="192.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="251.5" y="178.7" font-size="13" fill="#1f2328" text-anchor="middle">программный растеризатор</text>
+<rect x="381.9" y="157.6" width="212.0" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="487.9" y="178.7" font-size="13" fill="#1f2328" text-anchor="middle">пиксели в оперативной памяти</text>
+<path d="M347.9,174.6 H380.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="155.1" y="233.6" width="86.8" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="198.5" y="254.7" font-size="13" fill="#1f2328" text-anchor="middle">3D-бэкенд</text>
+<rect x="275.8" y="224.6" width="177.8" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="364.7" y="245.7" font-size="13" fill="#1f2328" text-anchor="middle">общий интерфейс</text>
+<text x="364.7" y="263.7" font-size="13" fill="#1f2328" text-anchor="middle">графического устройства</text>
+<path d="M241.8,250.6 H274.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M105.1,134.6 V250.6 H154.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M105.1,174.6 H154.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="523.6" y="209.6" width="103.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="575.5" y="230.7" font-size="13" fill="#1f2328" text-anchor="middle">Direct3D 10.1</text>
+<path d="M453.6,250.6 H479.6 V226.6 H522.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="523.6" y="257.6" width="103.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="575.5" y="278.7" font-size="13" fill="#1f2328" text-anchor="middle">OpenGL</text>
+<path d="M453.6,250.6 H479.6 V274.6 H522.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

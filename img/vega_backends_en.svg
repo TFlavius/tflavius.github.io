@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="579" height="307" viewBox="0 0 579 307" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>VEGA backends</title>
+<desc>The page, SVG, canvas and Opera's interface are all drawn through VEGA. It has two paths: a software rasterizer producing pixels in main memory, and a 3D backend on top of a shared graphics device interface implemented with Direct3D 10.1 and OpenGL.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="579" height="307" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="141.7" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="90.8" y="37.1" font-size="13" fill="#1f2328" text-anchor="middle">Page, SVG, canvas,</text>
+<text x="90.8" y="55.0" font-size="13" fill="#1f2328" text-anchor="middle">Opera's interface</text>
+<rect x="57.5" y="97.9" width="66.6" height="36.7" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="90.8" y="121.0" font-size="15" fill="#1f2328" font-weight="600" text-anchor="middle">VEGA</text>
+<path d="M90.8,67.9 V96.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="140.8" y="157.6" width="131.1" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="206.4" y="178.7" font-size="13" fill="#1f2328" text-anchor="middle">software rasterizer</text>
+<rect x="305.9" y="157.6" width="153.5" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="382.7" y="178.7" font-size="13" fill="#1f2328" text-anchor="middle">pixels in main memory</text>
+<path d="M271.9,174.6 H304.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="140.8" y="233.6" width="93.7" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="187.7" y="254.7" font-size="13" fill="#1f2328" text-anchor="middle">3D backend</text>
+<rect x="268.5" y="224.6" width="116.8" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="326.9" y="245.7" font-size="13" fill="#1f2328" text-anchor="middle">shared graphics</text>
+<text x="326.9" y="263.7" font-size="13" fill="#1f2328" text-anchor="middle">device interface</text>
+<path d="M234.5,250.6 H267.5" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M90.8,134.6 V250.6 H139.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M90.8,174.6 H139.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="455.3" y="209.6" width="103.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="507.2" y="230.7" font-size="13" fill="#1f2328" text-anchor="middle">Direct3D 10.1</text>
+<path d="M385.3,250.6 H411.3 V226.6 H454.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="455.3" y="257.6" width="103.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="507.2" y="278.7" font-size="13" fill="#1f2328" text-anchor="middle">OpenGL</text>
+<path d="M385.3,250.6 H411.3 V274.6 H454.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

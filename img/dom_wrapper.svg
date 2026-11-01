@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="917" height="164" viewBox="0 0 917 164" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Как скрипт получает firstChild в Presto</title>
+<desc>Обращение document.body.firstChild в Carakan идёт к обёртке DOM_Element, создаваемой при первом обращении; её GetName("firstChild") обращается к настоящему узлу дерева HTML_Element.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="917" height="164" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="239.2" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="139.6" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">Carakan (JavaScript)</text>
+<rect x="293.2" y="16.0" width="396.4" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="491.4" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">модуль dom</text>
+<rect x="723.6" y="16.0" width="174.3" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="810.8" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">движок</text>
+<rect x="34.0" y="84.0" width="211.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="139.6" y="105.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">document.body.firstChild</text>
+<rect x="307.2" y="68.8" width="146.6" height="64.3" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="380.5" y="89.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">DOM_Element</text>
+<text x="380.5" y="105.9" font-size="11" fill="#59636e" text-anchor="middle">обёртка, создаётся</text>
+<text x="380.5" y="121.1" font-size="11" fill="#59636e" text-anchor="middle">при первом обращении</text>
+<path d="M245.2,101.0 H306.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="487.8" y="84.0" width="187.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="581.7" y="105.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GetName("firstChild")</text>
+<path d="M453.8,101.0 H486.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="737.6" y="76.4" width="146.3" height="49.1" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="810.8" y="97.5" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">HTML_Element</text>
+<text x="810.8" y="113.5" font-size="11" fill="#59636e" text-anchor="middle">настоящий узел дерева</text>
+<path d="M675.6,101.0 H736.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

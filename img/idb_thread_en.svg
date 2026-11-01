@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="413" height="447" viewBox="0 0 413 447" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>A separate IndexedDB thread</title>
+<desc>The main thread validates and prepares the request and puts it into the job queue; the IndexedDB thread runs database operations through SQLite and returns the result through the completion queue; the main thread reconstructs the objects and fires events for the page.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="413" height="447" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="373.2" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="38.0" font-size="12" fill="#59636e" font-weight="600">Main thread</text>
+<rect x="36.0" y="53.0" width="84.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="78.4" y="74.1" font-size="13" fill="#1f2328" text-anchor="middle">JavaScript</text>
+<rect x="154.8" y="53.0" width="222.4" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="266.0" y="74.1" font-size="13" fill="#1f2328" text-anchor="middle">request validation and preparation</text>
+<path d="M120.8,70.0 H153.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="167.8" y="124.0" width="77.5" height="32.6" rx="14" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="206.6" y="144.1" font-size="12" fill="#1f2328" text-anchor="middle">job queue</text>
+<path d="M206.6,98.0 V123.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M206.6,156.6 V181.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="182.6" width="373.2" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="204.6" font-size="12" fill="#59636e" font-weight="600">IndexedDB thread</text>
+<rect x="45.9" y="219.6" width="142.4" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="117.1" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">database operations</text>
+<rect x="222.3" y="219.6" width="63.9" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="254.2" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">SQLite</text>
+<path d="M188.3,236.6 H221.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="320.2" y="219.6" width="47.1" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="343.8" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">disk</text>
+<path d="M286.2,236.6 H319.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="146.4" y="290.6" width="120.5" height="32.6" rx="14" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="206.6" y="310.6" font-size="12" fill="#1f2328" text-anchor="middle">completion queue</text>
+<path d="M206.6,264.6 V289.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M206.6,323.1 V348.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="349.1" width="373.2" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="371.1" font-size="12" fill="#59636e" font-weight="600">Main thread</text>
+<rect x="48.7" y="386.1" width="145.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="121.6" y="407.2" font-size="13" fill="#1f2328" text-anchor="middle">object reconstruction</text>
+<rect x="228.6" y="386.1" width="135.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="296.6" y="407.2" font-size="13" fill="#1f2328" text-anchor="middle">events for the page</text>
+<path d="M194.6,403.1 H227.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

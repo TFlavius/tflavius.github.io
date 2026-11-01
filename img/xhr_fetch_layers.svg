@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="835" height="124" viewBox="0 0 835 124" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>XMLHttpRequest и fetch()</title>
+<desc>XMLHttpRequest → DOM_XMLHttpRequest и fetch() → DOM_FetchController сходятся в общем DOM_HTTPRequest, который работает поверх URL/HTTP/TLS/cache.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="835" height="124" fill="#ffffff"/>
+<rect x="20.0" y="19.0" width="133.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="86.6" y="40.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">XMLHttpRequest</text>
+<rect x="20.0" y="75.0" width="133.2" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="86.6" y="96.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">fetch()</text>
+<rect x="187.2" y="19.0" width="172.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="273.3" y="40.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">DOM_XMLHttpRequest</text>
+<rect x="187.2" y="75.0" width="172.2" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="273.3" y="96.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">DOM_FetchController</text>
+<path d="M153.2,36.0 H186.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M153.2,92.0 H186.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="429.4" y="47.0" width="141.0" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="499.9" y="68.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">DOM_HTTPRequest</text>
+<path d="M359.4,36.0 C394.4,36.0 394.4,64.0 428.4,64.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M359.4,92.0 C394.4,92.0 394.4,64.0 428.4,64.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="604.4" y="47.0" width="211.2" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="710.0" y="68.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">URL / HTTP / TLS / cache</text>
+<path d="M570.4,64.0 H603.4" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

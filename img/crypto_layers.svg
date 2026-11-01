@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="682" height="413" viewBox="0 0 682 413" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Архитектура Web Crypto в Otium</title>
+<desc>JavaScript передаёт параметры веб-слою, тот — CryptoExecutor. Исполнитель отправляет работу либо в фоновый поток к адаптерам OpenSSL, либо через брокер и частный канал процессу-помощнику с теми же адаптерами. Готовый нативный результат возвращается в веб-слой и завершает Promise.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="682" height="413" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="292.8" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="166.4" y="38.1" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">JavaScript</text>
+<text x="166.4" y="55.4" font-size="12" fill="#59636e" text-anchor="middle">параметры, входной массив, CryptoKey</text>
+<rect x="20.0" y="95.9" width="292.8" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="166.4" y="118.0" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Веб-слой</text>
+<text x="166.4" y="135.3" font-size="12" fill="#59636e" text-anchor="middle">преобразования, Promise, состояние запроса</text>
+<path d="M60.0,67.9 V94.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="175.8" width="292.8" height="51.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="166.4" y="197.9" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">CryptoExecutor</text>
+<text x="166.4" y="215.2" font-size="12" fill="#59636e" text-anchor="middle">снимок данных, права ключа, лимиты, очереди</text>
+<path d="M60.0,147.8 V174.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="110.0" y="244.7" width="117.7" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="168.9" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">фоновый поток</text>
+<rect x="257.7" y="244.7" width="83.0" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="299.2" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">адаптеры</text>
+<path d="M227.7,261.6 H256.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="370.7" y="244.7" width="80.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="411.1" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">OpenSSL</text>
+<path d="M340.7,261.6 H369.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="110.0" y="296.7" width="67.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="143.9" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">брокер</text>
+<rect x="207.8" y="296.7" width="112.9" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="264.3" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">частный канал</text>
+<path d="M177.8,313.6 H206.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="350.7" y="296.7" width="88.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="394.8" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">помощник</text>
+<path d="M320.7,313.6 H349.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="469.0" y="296.7" width="83.0" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="510.5" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">адаптеры</text>
+<path d="M439.0,313.6 H468.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="582.0" y="296.7" width="80.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="622.3" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">OpenSSL</text>
+<path d="M552.0,313.6 H581.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,261.6 H109.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,313.6 H109.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="363.7" width="198.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="119.5" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">готовый нативный результат</text>
+<rect x="248.9" y="363.7" width="78.5" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="288.2" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">веб-слой</text>
+<path d="M218.9,380.6 H247.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="357.4" y="363.7" width="149.4" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="432.1" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">завершение Promise</text>
+<path d="M327.4,380.6 H356.4" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,227.6 V362.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

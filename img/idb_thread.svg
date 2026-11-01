@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="447" viewBox="0 0 450 447" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Отдельный поток IndexedDB</title>
+<desc>Главный поток проверяет и готовит запрос и кладёт его в очередь заданий; поток IndexedDB выполняет операции с базой через SQLite и возвращает результат через очередь завершений; главный поток восстанавливает объекты и посылает события странице.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="450" height="447" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="410.4" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="38.0" font-size="12" fill="#59636e" font-weight="600">Главный поток</text>
+<rect x="58.1" y="53.0" width="84.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="100.5" y="74.1" font-size="13" fill="#1f2328" text-anchor="middle">JavaScript</text>
+<rect x="176.9" y="53.0" width="215.3" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="284.6" y="74.1" font-size="13" fill="#1f2328" text-anchor="middle">проверка и подготовка запроса</text>
+<path d="M142.9,70.0 H175.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="165.4" y="124.0" width="119.6" height="32.6" rx="14" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="225.2" y="144.1" font-size="12" fill="#1f2328" text-anchor="middle">очередь заданий</text>
+<path d="M225.2,98.0 V123.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M225.2,156.6 V181.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="182.6" width="410.4" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="204.6" font-size="12" fill="#59636e" font-weight="600">Поток IndexedDB</text>
+<rect x="68.0" y="219.6" width="131.4" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="133.7" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">операции с базой</text>
+<rect x="233.3" y="219.6" width="63.9" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="265.3" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">SQLite</text>
+<path d="M199.3,236.6 H232.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="331.3" y="219.6" width="51.2" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="356.8" y="240.7" font-size="13" fill="#1f2328" text-anchor="middle">диск</text>
+<path d="M297.3,236.6 H330.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="154.2" y="290.6" width="142.1" height="32.6" rx="14" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="225.2" y="310.6" font-size="12" fill="#1f2328" text-anchor="middle">очередь завершений</text>
+<path d="M225.2,264.6 V289.6" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M225.2,323.1 V348.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="349.1" width="410.4" height="82.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="36.0" y="371.1" font-size="12" fill="#59636e" font-weight="600">Главный поток</text>
+<rect x="36.0" y="386.1" width="181.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="127.0" y="407.2" font-size="13" fill="#1f2328" text-anchor="middle">восстановление объектов</text>
+<rect x="251.9" y="386.1" width="162.5" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="333.2" y="407.2" font-size="13" fill="#1f2328" text-anchor="middle">события для страницы</text>
+<path d="M217.9,403.1 H250.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

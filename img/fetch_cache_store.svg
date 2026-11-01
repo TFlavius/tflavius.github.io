@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="884" height="201" viewBox="0 0 884 201" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Обычный кеш: один адрес — один URL_Rep</title>
+<desc>Три обращения страницы к logo.png сводятся к одной записи site/logo.png в реестре URL_Store, которая указывает на единственный URL_Rep с заголовками кеширования, телом и куками.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="884" height="201" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="12" fill="#59636e" font-weight="600">Страница</text>
+<rect x="20.0" y="40.0" width="273.6" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="156.8" y="61.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">&lt;img src="logo.png"&gt;</text>
+<rect x="20.0" y="85.9" width="273.6" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="156.8" y="107.0" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">&lt;img src="logo.png"&gt;</text>
+<rect x="20.0" y="131.9" width="273.6" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="156.8" y="153.0" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">.x { background: url(logo.png) }</text>
+<rect x="373.6" y="33.9" width="161.4" height="99.9" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="454.3" y="55.9" font-size="14" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">URL_Store</text>
+<text x="454.3" y="73.9" font-size="12" fill="#59636e" text-anchor="middle">реестр адресов</text>
+<rect x="389.6" y="85.9" width="129.4" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="454.3" y="107.0" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">site/logo.png</text>
+<text x="454.3" y="153.9" font-size="12" fill="#59636e" font-style="italic" text-anchor="middle">один адрес — один объект</text>
+<path d="M293.6,57.0 C338.6,57.0 344.6,102.9 388.6,102.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M293.6,102.9 C338.6,102.9 344.6,102.9 388.6,102.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M293.6,148.8 C338.6,148.8 344.6,102.9 388.6,102.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="615.0" y="19.9" width="249.7" height="166.0" rx="8" fill="#ffffff" stroke="#54aeff" stroke-width="1.2"/>
+<path d="M616.2,55.9 V27.9 a7,7 0 0 1 7,-6.8 H856.7 a7,7 0 0 1 7,6.8 V55.9 z" fill="#ddf4ff"/>
+<line x1="615.0" y1="55.9" x2="864.7" y2="55.9" stroke="#54aeff" stroke-width="1.2"/>
+<text x="631.0" y="43.9" font-size="14" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600">URL_Rep</text>
+<text x="689.8" y="43.9" font-size="13" fill="#59636e"> «site/logo.png»</text>
+<text x="631.0" y="73.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace">Cache-Control: max-age=3600</text>
+<text x="631.0" y="97.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace">ETag: "a1b2"</text>
+<text x="631.0" y="121.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace">Last-Modified: 29 Oct 12:00</text>
+<text x="631.0" y="145.9" font-size="13" fill="#1f2328">тело: 48 КБ (в памяти или на диске)</text>
+<text x="631.0" y="169.9" font-size="13" fill="#1f2328">куки, состояние загрузки</text>
+<path d="M519.0,102.9 H614.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

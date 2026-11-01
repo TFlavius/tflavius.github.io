@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="413" viewBox="0 0 640 413" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Web Crypto architecture in Otium</title>
+<desc>JavaScript hands the parameters to the web layer, which passes them to CryptoExecutor. The executor sends the work either to a background thread with the OpenSSL adapters, or through a broker and a private channel to the helper process with the same adapters. The finished native result goes back to the web layer and settles the Promise.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="640" height="413" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="277.0" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="158.5" y="38.1" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">JavaScript</text>
+<text x="158.5" y="55.4" font-size="12" fill="#59636e" text-anchor="middle">parameters, input array, CryptoKey</text>
+<rect x="20.0" y="95.9" width="277.0" height="51.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="158.5" y="118.0" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Web layer</text>
+<text x="158.5" y="135.3" font-size="12" fill="#59636e" text-anchor="middle">conversions, Promise, request state</text>
+<path d="M60.0,67.9 V94.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="175.8" width="277.0" height="51.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="158.5" y="197.9" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">CryptoExecutor</text>
+<text x="158.5" y="215.2" font-size="12" fill="#59636e" text-anchor="middle">data snapshot, key permissions, limits, queues</text>
+<path d="M60.0,147.8 V174.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="110.0" y="244.7" width="134.1" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="177.0" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">background thread</text>
+<rect x="274.1" y="244.7" width="74.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="311.5" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">adapters</text>
+<path d="M244.1,261.6 H273.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="378.9" y="244.7" width="80.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="419.3" y="265.8" font-size="13" fill="#1f2328" text-anchor="middle">OpenSSL</text>
+<path d="M348.9,261.6 H377.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="110.0" y="296.7" width="61.7" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="140.8" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">broker</text>
+<rect x="201.7" y="296.7" width="112.5" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="258.0" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">private channel</text>
+<path d="M171.7,313.6 H200.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="344.2" y="296.7" width="60.3" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="374.4" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">helper</text>
+<path d="M314.2,313.6 H343.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="434.5" y="296.7" width="74.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="471.9" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">adapters</text>
+<path d="M404.5,313.6 H433.5" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="539.3" y="296.7" width="80.7" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="579.7" y="317.8" font-size="13" fill="#1f2328" text-anchor="middle">OpenSSL</text>
+<path d="M509.3,313.6 H538.3" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,261.6 H109.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,313.6 H109.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="363.7" width="142.9" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="91.5" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">finished native result</text>
+<rect x="192.9" y="363.7" width="79.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="232.8" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">web layer</text>
+<path d="M162.9,380.6 H191.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="302.7" y="363.7" width="113.0" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="359.2" y="384.8" font-size="13" fill="#1f2328" text-anchor="middle">Promise settles</text>
+<path d="M272.7,380.6 H301.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M60.0,227.6 V362.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

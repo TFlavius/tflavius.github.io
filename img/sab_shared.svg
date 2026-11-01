@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="566" height="319" viewBox="0 0 566 319" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Общий блок памяти для двух агентов</title>
+<desc>У каждого агента в своей куче свой SharedArrayBuffer и свой Int32Array; оба смотрят в один ES_ArrayBufferBackingStore, за которым лежат общие байты процесса.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="566" height="319" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="208.2" height="150.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="124.1" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">агент A, куча A</text>
+<rect x="38.0" y="50.0" width="172.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="124.1" y="71.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">SharedArrayBuffer A</text>
+<rect x="38.0" y="113.9" width="172.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="124.1" y="135.0" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">Int32Array A</text>
+<path d="M124.1,83.9 V112.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="338.2" y="16.0" width="208.2" height="150.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="442.3" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">агент B, куча B</text>
+<rect x="356.2" y="50.0" width="172.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="442.3" y="71.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">SharedArrayBuffer B</text>
+<rect x="356.2" y="113.9" width="172.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="442.3" y="135.0" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">Int32Array B</text>
+<path d="M442.3,83.9 V112.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="169.8" y="206.0" width="226.8" height="33.9" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="283.2" y="227.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">ES_ArrayBufferBackingStore</text>
+<path d="M124.1,147.9 C124.1,187.9 199.8,176.0 199.8,205.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M442.3,147.9 C442.3,187.9 366.6,176.0 366.6,205.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="200.7" y="269.9" width="165.0" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="283.2" y="291.0" font-size="13" fill="#1f2328" text-anchor="middle">общие байты процесса</text>
+<path d="M283.2,239.9 V268.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

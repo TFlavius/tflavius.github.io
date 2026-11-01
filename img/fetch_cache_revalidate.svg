@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="922" height="389" viewBox="0 0 922 389" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Повторное обращение к ресурсу</title>
+<desc>Если копии нет — GET и сохранение. Если копия свежая — отдать её без сети. Если устарела, но есть ETag или дата — условный GET с If-None-Match: ответ 304 продлевает копию, 200 заменяет её. Иначе — обычный GET и замена копии.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="922" height="389" fill="#ffffff"/>
+<rect x="20.0" y="18.3" width="204.5" height="35.3" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="122.3" y="40.4" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Копия в кеше?</text>
+<path d="M224.5,36.0 H287.5" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="288.5" y="19.0" width="47.4" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="312.2" y="40.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET</text>
+<rect x="369.9" y="19.0" width="88.7" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="414.3" y="40.1" font-size="13" fill="#1f2328" text-anchor="middle">200 + тело</text>
+<path d="M335.9,36.0 H368.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="492.7" y="19.0" width="128.1" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="556.7" y="40.1" font-size="13" fill="#1f2328" text-anchor="middle">сохранить копию</text>
+<path d="M458.7,36.0 H491.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="97.7" width="204.5" height="51.9" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="122.3" y="119.8" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Копия свежая?</text>
+<text x="122.3" y="137.1" font-size="12" fill="#59636e" text-anchor="middle">загружена меньше часа назад?</text>
+<path d="M122.3,53.7 V96.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M224.5,123.6 H287.5" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="288.5" y="106.6" width="212.9" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="395.0" y="127.7" font-size="13" fill="#1f2328" text-anchor="middle">отдать копию, в сеть не ходить</text>
+<rect x="20.0" y="227.9" width="204.5" height="35.3" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="122.3" y="250.0" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Есть ETag или дата?</text>
+<path d="M122.3,149.5 V226.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="288.5" y="220.3" width="234.6" height="50.5" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="405.8" y="241.4" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET + If-None-Match: "a1b2"</text>
+<text x="405.8" y="258.3" font-size="12" fill="#59636e" text-anchor="middle">«у меня версия a1b2»</text>
+<path d="M224.5,245.5 H287.5" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="579.1" y="190.3" width="148.8" height="50.5" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="653.5" y="211.4" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">304 Not Modified</text>
+<text x="653.5" y="228.3" font-size="12" fill="#59636e" text-anchor="middle">без тела</text>
+<rect x="579.1" y="250.3" width="148.8" height="50.5" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="653.5" y="271.4" font-size="13" fill="#1f2328" text-anchor="middle">200 + новое тело</text>
+<text x="653.5" y="288.3" font-size="12" fill="#59636e" text-anchor="middle">с новым ETag</text>
+<path d="M523.1,245.5 H547.1 V215.5 H578.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M523.1,245.5 H547.1 V275.5 H578.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="761.9" y="189.6" width="140.2" height="51.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="832.0" y="210.7" font-size="13" fill="#1f2328" text-anchor="middle">отдать копию,</text>
+<text x="832.0" y="228.6" font-size="13" fill="#1f2328" text-anchor="middle">продлить свежесть</text>
+<path d="M727.9,215.5 H760.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="761.9" y="258.6" width="140.2" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="832.0" y="279.7" font-size="13" fill="#1f2328" text-anchor="middle">заменить копию</text>
+<path d="M727.9,275.5 H760.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="98.6" y="339.8" width="47.4" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="122.3" y="360.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET</text>
+<path d="M122.3,263.2 V338.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="180.0" y="339.8" width="88.7" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="224.3" y="360.9" font-size="13" fill="#1f2328" text-anchor="middle">200 + тело</text>
+<path d="M146.0,356.8 H179.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="302.7" y="339.8" width="122.5" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="364.0" y="360.9" font-size="13" fill="#1f2328" text-anchor="middle">заменить копию</text>
+<path d="M268.7,356.8 H301.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="256.5" y="29.0" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">нет</text>
+<text x="130.3" y="79.7" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">да</text>
+<text x="256.5" y="116.6" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">да</text>
+<text x="130.3" y="192.7" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">нет</text>
+<text x="256.5" y="238.5" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">да</text>
+<text x="130.3" y="305.5" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">нет</text>
+</svg>
