@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="164" viewBox="0 0 852 164" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>How a script gets firstChild in Presto</title>
+<desc>Accessing document.body.firstChild in Carakan goes to the DOM_Element wrapper, created on first access; its GetName("firstChild") reaches the real tree node, HTML_Element.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="852" height="164" fill="#ffffff"/>
+<rect x="20.0" y="16.0" width="239.2" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="139.6" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">Carakan (JavaScript)</text>
+<rect x="293.2" y="16.0" width="359.6" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="473.0" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">dom module</text>
+<rect x="686.8" y="16.0" width="145.6" height="132.0" rx="8" fill="#f6f8fa" stroke="#e1e5ea" stroke-width="1.2"/>
+<text x="759.6" y="38.0" font-size="12" fill="#59636e" font-weight="600" text-anchor="middle">engine</text>
+<rect x="34.0" y="84.0" width="211.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="139.6" y="105.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">document.body.firstChild</text>
+<rect x="307.2" y="68.8" width="109.8" height="64.3" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.2"/>
+<text x="362.1" y="89.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">DOM_Element</text>
+<text x="362.1" y="105.9" font-size="11" fill="#59636e" text-anchor="middle">wrapper, created</text>
+<text x="362.1" y="121.1" font-size="11" fill="#59636e" text-anchor="middle">on first access</text>
+<path d="M245.2,101.0 H306.2" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="451.0" y="84.0" width="187.8" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="544.9" y="105.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GetName("firstChild")</text>
+<path d="M417.0,101.0 H450.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="700.8" y="76.4" width="117.6" height="49.1" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="759.6" y="97.5" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" font-weight="600" text-anchor="middle">HTML_Element</text>
+<text x="759.6" y="113.5" font-size="11" fill="#59636e" text-anchor="middle">the real tree node</text>
+<path d="M638.8,101.0 H699.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+</svg>

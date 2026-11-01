@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="907" height="389" viewBox="0 0 907 389" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" role="img">
+<title>Repeated access to a resource</title>
+<desc>No copy: GET and store it. A fresh copy: serve it without touching the network. A stale copy with an ETag or a date: a conditional GET with If-None-Match, where 304 extends the copy and 200 replaces it. Otherwise: a plain GET and a replaced copy.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7781"/></marker></defs>
+<rect width="907" height="389" fill="#ffffff"/>
+<rect x="20.0" y="18.3" width="190.4" height="35.3" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="115.2" y="40.4" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Copy in the cache?</text>
+<path d="M210.4,36.0 H273.4" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="274.4" y="19.0" width="47.4" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="298.1" y="40.1" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET</text>
+<rect x="355.8" y="19.0" width="90.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="400.8" y="40.1" font-size="13" fill="#1f2328" text-anchor="middle">200 + body</text>
+<path d="M321.8,36.0 H354.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="479.9" y="19.0" width="106.0" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="532.9" y="40.1" font-size="13" fill="#1f2328" text-anchor="middle">store the copy</text>
+<path d="M445.9,36.0 H478.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="20.0" y="97.7" width="190.4" height="51.9" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="115.2" y="119.8" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Is the copy fresh?</text>
+<text x="115.2" y="137.1" font-size="12" fill="#59636e" text-anchor="middle">loaded less than an hour ago?</text>
+<path d="M115.2,53.7 V96.7" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M210.4,123.6 H273.4" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="274.4" y="106.6" width="210.4" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="379.6" y="127.7" font-size="13" fill="#1f2328" text-anchor="middle">serve the copy, skip the network</text>
+<rect x="20.0" y="227.9" width="190.4" height="35.3" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="1.2"/>
+<text x="115.2" y="250.0" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle">Has an ETag or a date?</text>
+<path d="M115.2,149.5 V226.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="274.4" y="220.3" width="234.6" height="50.5" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="391.7" y="241.4" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET + If-None-Match: "a1b2"</text>
+<text x="391.7" y="258.3" font-size="12" fill="#59636e" text-anchor="middle">"I have version a1b2"</text>
+<path d="M210.4,245.5 H273.4" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="565.0" y="190.3" width="148.8" height="50.5" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="639.4" y="211.4" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">304 Not Modified</text>
+<text x="639.4" y="228.3" font-size="12" fill="#59636e" text-anchor="middle">no body</text>
+<rect x="565.0" y="250.3" width="148.8" height="50.5" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="639.4" y="271.4" font-size="13" fill="#1f2328" text-anchor="middle">200 + new body</text>
+<text x="639.4" y="288.3" font-size="12" fill="#59636e" text-anchor="middle">with a new ETag</text>
+<path d="M509.0,245.5 H533.0 V215.5 H564.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M509.0,245.5 H533.0 V275.5 H564.0" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="747.8" y="189.6" width="140.1" height="51.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="817.8" y="210.7" font-size="13" fill="#1f2328" text-anchor="middle">serve the copy,</text>
+<text x="817.8" y="228.6" font-size="13" fill="#1f2328" text-anchor="middle">extend its freshness</text>
+<path d="M713.8,215.5 H746.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="747.8" y="258.6" width="140.1" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="817.8" y="279.7" font-size="13" fill="#1f2328" text-anchor="middle">replace the copy</text>
+<path d="M713.8,275.5 H746.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="91.5" y="339.8" width="47.4" height="33.9" rx="6" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2"/>
+<text x="115.2" y="360.9" font-size="13" fill="#1f2328" font-family="Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace" text-anchor="middle">GET</text>
+<path d="M115.2,263.2 V338.8" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="172.9" y="339.8" width="90.2" height="33.9" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text x="218.0" y="360.9" font-size="13" fill="#1f2328" text-anchor="middle">200 + body</text>
+<path d="M138.9,356.8 H171.9" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="297.1" y="339.8" width="119.8" height="33.9" rx="6" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.2"/>
+<text x="357.0" y="360.9" font-size="13" fill="#1f2328" text-anchor="middle">replace the copy</text>
+<path d="M263.1,356.8 H296.1" fill="none" stroke="#6e7781" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="242.4" y="29.0" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">no</text>
+<text x="123.2" y="79.7" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">yes</text>
+<text x="242.4" y="116.6" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">yes</text>
+<text x="123.2" y="192.7" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">no</text>
+<text x="242.4" y="238.5" font-size="12" fill="#59636e" text-anchor="middle" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">yes</text>
+<text x="123.2" y="305.5" font-size="12" fill="#59636e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">no</text>
+</svg>
