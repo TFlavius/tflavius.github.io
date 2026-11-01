@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII" | split: "," %}
+{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV" | split: "," %}
 {% assign parts = site.pages | where_exp: "p", "p.lang == page.lang" | sort: "path" %}
 {% if page.lang == "ru" %}
   {% assign s_label = "Навигация по серии" %}
@@ -59,9 +59,12 @@ layout: default
     <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} class="is-current" aria-current="page"{% endif %}><span class="series-nav-num">{{ romans[forloop.index0] }}</span><span>{{ short }}</span></a></li>
     {%- endfor %}
   </ul>
+  {%- assign twin = site.pages | where: "url", other_url | first %}
+  {%- if twin %}
   <div class="series-nav-foot">
     <a href="{{ other_url | relative_url }}" lang="{% if page.lang == 'ru' %}en{% else %}ru{% endif %}">{{ s_other }}</a>
   </div>
+  {%- endif %}
   <label for="series-nav" class="series-nav-dismiss">✕ {{ s_close }}</label>
 </nav>
 
