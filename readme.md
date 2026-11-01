@@ -217,6 +217,20 @@
   * [LVIII.IX Carakan разгоняется (медленно)](13.opera-presto-web-crypto-es2026-p3.md#lviiiix-carakan-разгоняется-медленно)
 * **[LIX. Что дальше?](13.opera-presto-web-crypto-es2026-p3.md#lix-что-дальше)**
 
+### Часть 14. Работа продолжается
+
+[Читать здесь](14.otium-work-in-progress.md) · [читать на сайте](https://tflavius.github.io/ru/work-in-progress/)
+
+* **[LX. Эффект Конкорда на практике](14.otium-work-in-progress.md#lx-эффект-конкорда-на-практике)**
+* **[LXI. Доработки Fetch](14.otium-work-in-progress.md#lxi-доработки-fetch)**
+* **[LXII. Патчи для M2](14.otium-work-in-progress.md#lxii-патчи-для-m2)**
+* **[LXIII. Время строить DOM](14.otium-work-in-progress.md#lxiii-время-строить-dom)**
+* **[LXIV. Упражнения на мультиплатформу](14.otium-work-in-progress.md#lxiv-упражнения-на-мультиплатформу)**
+  * [LXIV.I Windows Vista (2006)](14.otium-work-in-progress.md#lxivi-windows-vista-2006)
+  * [LXIV.II Windows XP (2001)](14.otium-work-in-progress.md#lxivii-windows-xp-2001)
+  * [LXIV.III ?i??o?s ??](14.otium-work-in-progress.md#lxiviii-ios-)
+* **[LXV. Что дальше?](14.otium-work-in-progress.md#lxv-что-дальше)**
+
 ---
 
 ## Contents [EN]
@@ -428,3 +442,17 @@
   * [LVIII.VIII Minus Times Minus Isn't Always Plus](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiviii-minus-times-minus-isnt-always-plus)
   * [LVIII.IX Carakan Picks Up Speed (Slowly)](13.opera-presto-web-crypto-es2026-p3-en.md#lviiiix-carakan-picks-up-speed-slowly)
 * **[LIX. What's Next?](13.opera-presto-web-crypto-es2026-p3-en.md#lix-whats-next)**
+
+### Part 14. Work in Progress
+
+[Read here](14.otium-work-in-progress-en.md) · [read online](https://tflavius.github.io/work-in-progress/)
+
+* **[LX. The Concorde Effect in Practice](14.otium-work-in-progress-en.md#lx-the-concorde-effect-in-practice)**
+* **[LXI. Fetch Improvements](14.otium-work-in-progress-en.md#lxi-fetch-improvements)**
+* **[LXII. Patches for M2](14.otium-work-in-progress-en.md#lxii-patches-for-m2)**
+* **[LXIII. Time to Build the DOM](14.otium-work-in-progress-en.md#lxiii-time-to-build-the-dom)**
+* **[LXIV. Cross-Platform Exercises](14.otium-work-in-progress-en.md#lxiv-cross-platform-exercises)**
+  * [LXIV.I Windows Vista (2006)](14.otium-work-in-progress-en.md#lxivi-windows-vista-2006)
+  * [LXIV.II Windows XP (2001)](14.otium-work-in-progress-en.md#lxivii-windows-xp-2001)
+  * [LXIV.III ?i??o?s ??](14.otium-work-in-progress-en.md#lxiviii-ios-)
+* **[LXV. What's Next?](14.otium-work-in-progress-en.md#lxv-whats-next)**
